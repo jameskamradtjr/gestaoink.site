@@ -419,26 +419,29 @@
 
     <script>
       document.addEventListener('DOMContentLoaded', function() {
-      // Seleciona o botão pelo nome da classe
-      var botao = document.querySelectorAll('.login_gestaoink'); 
+          // Seleciona todos os elementos com a classe 'login_gestaoink'
+          var botoes = document.querySelectorAll('.login_gestaoink');
   
-      if (botao) {
           // Captura a URL da página atual e seus parâmetros
-          var urlAtual = window.location.href;
           var parametros = window.location.search;
   
-          // Verifica se já existem parâmetros no link do botão
-          var linkAtual = botao.href;
-          if (linkAtual.indexOf('?') === -1) {
-              // Se não houver parâmetros, adiciona os da página
-              botao.href = linkAtual + parametros;
-          } else {
-              // Se já houver parâmetros, concatena com os existentes
-              botao.href = linkAtual + '&' + parametros.substring(1);
-          }
-      }
-  });
-  
+          // Itera sobre cada botão para modificar o href
+          botoes.forEach(function(botao) {
+              // Verifica se o href do botão está definido
+              if (botao.href) {
+                  // Verifica se já existem parâmetros no link do botão
+                  var linkAtual = botao.href;
+                  if (linkAtual.indexOf('?') === -1) {
+                      // Se não houver parâmetros, adiciona os da página
+                      botao.href = linkAtual + parametros;
+                  } else {
+                      // Se já houver parâmetros, concatena com os existentes
+                      botao.href = linkAtual + '&' + parametros.substring(1);
+                  }
+              }
+          });
+      });
   </script>
+  
   
 </body></html>
