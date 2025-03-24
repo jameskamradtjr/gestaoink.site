@@ -1,637 +1,1125 @@
 <!DOCTYPE html>
-<html style="font-size: 16px;" lang="pt-BR">
-
+<html lang="pt-BR">
 <head>
+  <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta charset="utf-8">
-  <meta name="author" content="Indexmed">
-  <meta name="description"
-    content="Organize financeiro, agenda, orçamentos, estoque e mais do seu estúdio de tatuagem.">
-  <meta name="keywords"
-    content="agenda online, para tatuadores,sistema para estudio de tatuagem, gestão de orçamentos, estoque de materiais tatuagem, gestor">
-  <title>GestãoInk - Sistema de Gestão e Agendamentos para Estúdios de Tatuagem</title>
+  <meta name="author" content="byte0">
+  <meta name="description" content="Gestão completa para estúdios de tatuagem: agenda, financeiro, estoque, orçamentos e automações. A plataforma mais avançada do Brasil.">
+  <meta name="keywords" content="gestão estúdio de tatuagem, sistema para tatuadores, agenda para tatuadores, controle financeiro tatuagem, orçamentos tatuagem, CRM tatuagem">
+  <title>GestãoInk | Sistema Premium para Estúdios de Tatuagem</title>
+  
   <!-- Google Tag Manager -->
   <script>(function (w, d, s, l, i) {
       w[l] = w[l] || []; w[l].push({
-        'gtm.start':
-          new Date().getTime(), event: 'gtm.js'
+        'gtm.start': new Date().getTime(), event: 'gtm.js'
       }); var f = d.getElementsByTagName(s)[0],
         j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
           'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
     })(window, document, 'script', 'dataLayer', 'GTM-KK23FMJ');</script>
   <!-- End Google Tag Manager -->
-  <link rel="stylesheet" href="nicepage.css" media="screen">
-  <link rel="stylesheet" href="GestãoInk.css" media="screen">
-  <script class="u-script" type="text/javascript" src="jquery.js" defer=""></script>
-  <script class="u-script" type="text/javascript" src="nicepage.js" defer=""></script>
-  <meta name="generator" content="Nicepage 5.13.1, nicepage.com">
+  
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  
+  <!-- Favicon -->
   <link rel="icon" href="images/favicon.png">
-  <link id="u-theme-google-font" rel="stylesheet"
-    href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i|Open+Sans:300,300i,400,400i,500,500i,600,600i,700,700i,800,800i">
-  <link id="u-page-google-font" rel="stylesheet"
-    href="https://fonts.googleapis.com/css?family=Montserrat:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i">
-
-
-
-
-
-
+  
+  <!-- CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css">
+  
+  <style>
+    :root {
+      --primary: #ff725e;
+      --primary-hover: #ff8d7d;
+      --secondary: #455a64;
+      --dark: #263238;
+      --light: #f8f9fa;
+      --gray: #6c757d;
+    }
+    
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    body {
+      font-family: 'Montserrat', sans-serif;
+      background-color: #121212;
+      color: #fff;
+      overflow-x: hidden;
+    }
+    
+    .btn-primary {
+      background-color: var(--primary);
+      border-color: var(--primary);
+      border-radius: 6px;
+      padding: 12px 24px;
+      font-weight: 600;
+      transition: all 0.3s ease;
+    }
+    
+    .btn-primary:hover {
+      background-color: var(--primary-hover);
+      border-color: var(--primary-hover);
+      transform: translateY(-3px);
+      box-shadow: 0 10px 20px rgba(255, 114, 94, 0.3);
+    }
+    
+    .btn-outline {
+      background-color: transparent;
+      border: 2px solid var(--primary);
+      color: var(--primary);
+      border-radius: 6px;
+      padding: 12px 24px;
+      font-weight: 600;
+      transition: all 0.3s ease;
+    }
+    
+    .btn-outline:hover {
+      background-color: var(--primary);
+      color: white;
+      transform: translateY(-3px);
+      box-shadow: 0 10px 20px rgba(255, 114, 94, 0.3);
+    }
+    
+    .section {
+      padding: 100px 0;
+    }
+    
+    h1, h2, h3, h4, h5, h6 {
+      font-weight: 700;
+    }
+    
+    .card {
+      background-color: #1e1e1e;
+      border: none;
+      border-radius: 12px;
+      overflow: hidden;
+      transition: all 0.3s ease;
+    }
+    
+    .card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+    }
+    
+    .navbar {
+      padding: 20px 0;
+      transition: all 0.3s ease;
+      background-color: rgba(18, 18, 18, 0.95);
+    }
+    
+    .navbar.scrolled {
+      padding: 12px 0;
+      background-color: rgba(18, 18, 18, 0.98);
+      box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+    }
+    
+    .navbar-brand img {
+      height: 40px;
+      transition: all 0.3s ease;
+    }
+    
+    .navbar.scrolled .navbar-brand img {
+      height: 35px;
+    }
+    
+    .nav-link {
+      color: #fff;
+      font-weight: 500;
+      margin: 0 15px;
+      position: relative;
+      transition: all 0.3s ease;
+    }
+    
+    .nav-link:hover {
+      color: var(--primary);
+    }
+    
+    .nav-link::after {
+      content: '';
+      position: absolute;
+      width: 0;
+      height: 2px;
+      bottom: -5px;
+      left: 0;
+      background-color: var(--primary);
+      transition: width 0.3s ease;
+    }
+    
+    .nav-link:hover::after {
+      width: 100%;
+    }
+    
+    .feature-icon {
+      width: 80px;
+      height: 80px;
+      border-radius: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 20px;
+      background-color: rgba(255, 114, 94, 0.1);
+    }
+    
+    .feature-icon i {
+      font-size: 36px;
+      color: var(--primary);
+    }
+    
+    .hero-section {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .hero-section::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      right: -10%;
+      width: 80%;
+      height: 200%;
+      background: radial-gradient(ellipse at center, rgba(255, 114, 94, 0.2) 0%, rgba(0, 0, 0, 0) 70%);
+      z-index: 0;
+    }
+    
+    .hero-img {
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+      transition: all 0.5s ease;
+    }
+    
+    .hero-img img {
+      transition: all 0.5s ease;
+    }
+    
+    .hero-img:hover img {
+      transform: scale(1.05);
+    }
+    
+    .floating {
+      animation: floating 3s ease-in-out infinite;
+    }
+    
+    @keyframes floating {
+      0% { transform: translateY(0px); }
+      50% { transform: translateY(-15px); }
+      100% { transform: translateY(0px); }
+    }
+    
+    .stats-card {
+      padding: 30px;
+      border-radius: 12px;
+      background-color: #1e1e1e;
+      text-align: center;
+      border-bottom: 3px solid var(--primary);
+    }
+    
+    .stats-card h2 {
+      font-size: 48px;
+      font-weight: 700;
+      color: var(--primary);
+      margin-bottom: 10px;
+    }
+    
+    .swiper {
+      width: 100%;
+      padding: 50px 0;
+    }
+    
+    .swiper-slide {
+      background-position: center;
+      background-size: cover;
+      width: 300px;
+      height: 400px;
+      border-radius: 12px;
+      overflow: hidden;
+    }
+    
+    .testimonial-card {
+      background-color: #1e1e1e;
+      padding: 30px;
+      border-radius: 12px;
+      margin: 15px;
+      position: relative;
+    }
+    
+    .testimonial-card::before {
+      content: """;
+      position: absolute;
+      top: 20px;
+      left: 20px;
+      font-size: 60px;
+      font-weight: 700;
+      color: rgba(255, 114, 94, 0.2);
+    }
+    
+    .feature-img-container {
+      overflow: hidden;
+      border-radius: 12px;
+      box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+    }
+    
+    .feature-img-container img {
+      transition: all 0.5s ease;
+    }
+    
+    .feature-img-container:hover img {
+      transform: scale(1.05);
+    }
+    
+    .pricing-card {
+      padding: 40px;
+      border-radius: 12px;
+      background-color: #1e1e1e;
+      text-align: center;
+      transition: all 0.3s ease;
+      border: 1px solid #333;
+    }
+    
+    .pricing-card:hover {
+      transform: translateY(-15px);
+      border-color: var(--primary);
+    }
+    
+    .pricing-card.featured {
+      background-color: rgba(255, 114, 94, 0.1);
+      border: 2px solid var(--primary);
+    }
+    
+    .pricing-card .price {
+      font-size: 48px;
+      font-weight: 700;
+      color: var(--primary);
+      margin: 20px 0;
+    }
+    
+    footer {
+      background-color: #0a0a0a;
+      padding: 80px 0 30px;
+    }
+    
+    .social-links a {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background-color: #1e1e1e;
+      margin-right: 10px;
+      color: #fff;
+      transition: all 0.3s ease;
+    }
+    
+    .social-links a:hover {
+      background-color: var(--primary);
+      transform: translateY(-5px);
+    }
+    
+    .back-to-top {
+      position: fixed;
+      bottom: 30px;
+      right: 30px;
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      background-color: var(--primary);
+      color: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      opacity: 0;
+      transition: all 0.3s ease;
+      z-index: 99;
+    }
+    
+    .back-to-top.show {
+      opacity: 1;
+    }
+  </style>
 
   <script type="application/ld+json">{
-		"@context": "http://schema.org",
-		"@type": "Organization",
-		"name": "GestãoInk -Sistema de gestão",
-		"logo": "images/logoescrita.png",
-		"sameAs": [
-				"https://www.facebook.com/gestaoink",
-				"https://twitter.com/gestaoink",
-				"https://www.instagram.com/gestaoink/",
-				"https://www.linkedin.com/company/10319419/admin/",
-				"https://www.youtube.com/gestaoink"
-		]
-}</script>
-  <meta name="theme-color" content="#478ac9">
-  <meta name="twitter:site" content="@">
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="GestãoInk">
-  <meta name="twitter:description" content="GestãoInk -Sistema de gestão">
-  <meta property="og:title" content="GestãoInk">
-  <meta property="og:description" content="">
-  <meta property="og:type" content="website">
-  <meta data-intl-tel-input-cdn-path="intlTelInput/">
+    "@context": "http://schema.org",
+    "@type": "Organization",
+    "name": "GestãoInk - Sistema de gestão para estúdios de tatuagem",
+    "logo": "images/logoescrita.png",
+    "sameAs": [
+      "https://www.facebook.com/gestaoink",
+      "https://twitter.com/gestaoink",
+      "https://www.instagram.com/gestaoink/",
+      "https://www.linkedin.com/company/10319419/admin/",
+      "https://www.youtube.com/gestaoink"
+    ]
+  }</script>
 </head>
 
-<body data-home-page="GestãoInk.html" data-home-page-title="GestãoInk" class="u-body u-xl-mode" data-lang="pt">
+<body>
   <!-- Google Tag Manager (noscript) -->
-  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KK23FMJ" height="0" width="0"
-      style="display:none;visibility:hidden"></iframe></noscript>
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KK23FMJ" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <!-- End Google Tag Manager (noscript) -->
-  <header class="u-clearfix u-header u-header" id="sec-207b">
-    <div class="u-clearfix u-sheet u-sheet-1">
-      <a href="https://gestaoink.com" class="u-image u-logo u-image-1" data-image-width="532" data-image-height="260"
-        title="gestaoink">
-        <img src="images/logoescrita.png" class="u-logo-image u-logo-image-1">
+
+  <!-- Navigation -->
+  <nav class="navbar navbar-expand-lg fixed-top">
+    <div class="container">
+      <a class="navbar-brand" href="#">
+        <img src="images/logoescrita.png" alt="GestãoInk">
       </a>
-      <nav class="u-menu u-menu-one-level u-offcanvas u-menu-1">
-        <div class="menu-collapse">
-          <a class="u-button-style u-nav-link" href="#">
-            <svg class="u-svg-link" viewBox="0 0 24 24">
-              <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#menu-hamburger"></use>
-            </svg>
-            <svg class="u-svg-content" version="1.1" id="menu-hamburger" viewBox="0 0 16 16" x="0px" y="0px"
-              xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg">
-              <g>
-                <rect y="1" width="16" height="2"></rect>
-                <rect y="7" width="16" height="2"></rect>
-                <rect y="13" width="16" height="2"></rect>
-              </g>
-            </svg>
-          </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="#funcionalidades">Funcionalidades</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#beneficios">Benefícios</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#casos">Cases</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#planos">Planos</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="https://blog.gestaoink.site">Blog</a>
+          </li>
+        </ul>
+        <div class="ms-lg-4">
+          <a href="https://gestaoink.tech/dashboard/logingestaoink" class="btn btn-outline me-2">Login</a>
+          <a href="https://gestaoink.tech/dashboard/logingestaoink" class="btn btn-primary">Teste Grátis</a>
         </div>
-        <div class="u-custom-menu u-nav-container">
-          <ul class="u-nav u-unstyled">
-            <li class="u-nav-item"><a class="u-button-style u-nav-link" href="#sec-8009">Funções</a>
-            </li>
-            <li class="u-nav-item"><a class="u-button-style u-nav-link" href="https://blog.gestaoink.site">Blog</a>
-            </li>
-            <li class="u-nav-item"><a class="u-button-style u-nav-link" href="#sec-9c60">Planos e
-                Preços</a>
-            </li>
-            <li class="u-nav-item"><a class="u-button-style u-nav-link"
-                href="https://gestaoink.site/Política de Privacidade para a Tela de Permissão OAuth do Google Agenda API.pdf"
-                target="_blank">Política de Privacidade</a>
-            </li>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="hero-section" id="home">
+    <div class="container">
+      <div class="row align-items-center">
+        <div class="col-lg-6" data-aos="fade-right" data-aos-duration="1000">
+          <h1 class="display-4 fw-bold mb-4">Transforme a gestão do seu estúdio de tatuagem</h1>
+          <p class="lead mb-4">O sistema mais completo do Brasil, já utilizado por mais de 1000 estúdios. Gerencie agendamentos, orçamentos, estoque, finanças e todo o relacionamento com seus clientes em uma única plataforma.</p>
+          <div class="d-flex gap-3 mt-5">
+            <a href="https://gestaoink.tech/dashboard/logingestaoink" class="btn btn-primary">Teste Grátis por 5 dias <i class="fas fa-arrow-right ms-2"></i></a>
+            <a href="#demo" class="btn btn-outline">Ver demonstração</a>
+          </div>
+          <div class="mt-4 d-flex align-items-center">
+            <div class="me-4">
+              <i class="fas fa-shield-alt me-2 text-primary"></i> Dados 100% seguros
+            </div>
+            <div>
+              <i class="fas fa-mobile-alt me-2 text-primary"></i> Acesse de qualquer dispositivo
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-6" data-aos="fade-left" data-aos-duration="1000" data-aos-delay="300">
+          <div class="hero-img floating">
+            <img src="agenda.png" alt="GestãoInk Dashboard" class="img-fluid">
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Stats Section -->
+  <section class="section pb-0">
+    <div class="container">
+      <div class="row g-4">
+        <div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
+          <div class="stats-card">
+            <h2>1000+</h2>
+            <p class="mb-0">Estúdios confiam no GestãoInk</p>
+          </div>
+        </div>
+        <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
+          <div class="stats-card">
+            <h2>5x</h2>
+            <p class="mb-0">Mais eficiência na gestão diária</p>
+          </div>
+        </div>
+        <div class="col-md-4" data-aos="fade-up" data-aos-delay="300">
+          <div class="stats-card">
+            <h2>30%</h2>
+            <p class="mb-0">Aumento na conversão de orçamentos</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Features Section -->
+  <section class="section" id="funcionalidades">
+    <div class="container">
+      <div class="text-center mb-5" data-aos="fade-up">
+        <h2 class="fw-bold mb-3">Simplifique todas as áreas do seu estúdio</h2>
+        <p class="lead">Uma solução completa para cada aspecto do seu negócio</p>
+      </div>
+
+      <!-- Feature 1: Orçamentos -->
+      <div class="row align-items-center mb-5">
+        <div class="col-lg-6" data-aos="fade-right" data-aos-duration="1000">
+          <h3 class="fw-bold mb-4">Orçamentos inteligentes com formulário personalizado</h3>
+          <p class="mb-4">Capture orçamentos 24 horas por dia através de um formulário profissional personalizado para seu estúdio. Todas as solicitações são organizadas por ordem de chegada, com as referências anexadas.</p>
+          <ul class="list-unstyled">
+            <li class="mb-3"><i class="fas fa-check text-primary me-2"></i> Link personalizável para o formulário de orçamentos</li>
+            <li class="mb-3"><i class="fas fa-check text-primary me-2"></i> Organize as solicitações em um kanban eficiente</li>
+            <li class="mb-3"><i class="fas fa-check text-primary me-2"></i> Integração com WhatsApp para resposta rápida</li>
           </ul>
         </div>
-        <div class="u-custom-menu u-nav-container-collapse">
-          <div class="u-black u-container-style u-inner-container-layout u-opacity u-opacity-95 u-sidenav">
-            <div class="u-inner-container-layout u-sidenav-overflow">
-              <div class="u-menu-close"></div>
-              <ul class="u-align-center u-nav u-popupmenu-items u-unstyled u-nav-2">
-                <li class="u-nav-item"><a class="u-button-style u-nav-link" href="sec-8009">Funções</a>
-                </li>
-                <li class="u-nav-item"><a class="u-button-style u-nav-link" href="https://blog.gestaoink.site">Blog</a>
-                </li>
-                <li class="u-nav-item"><a class="u-button-style u-nav-link" href="#sec-9c60">Planos e Preços</a>
-                </li>
-                <li class="u-nav-item"><a class="u-button-style u-nav-link"
-                    href="https://gestaoink.site/Política de Privacidade Google Api.pdf" target="_blank">Política de
-                    Privacidade</a>
-                </li>
-              </ul>
+        <div class="col-lg-6" data-aos="fade-left" data-aos-duration="1000" data-aos-delay="200">
+          <div class="feature-img-container">
+            <img src="orcamento.png" alt="Sistema de orçamentos GestãoInk" class="img-fluid">
+          </div>
+        </div>
+      </div>
+
+      <!-- Feature 2: Agenda -->
+      <div class="row align-items-center mb-5 flex-row-reverse">
+        <div class="col-lg-6" data-aos="fade-left" data-aos-duration="1000">
+          <h3 class="fw-bold mb-4">Agenda completa com controle total</h3>
+          <p class="mb-4">A agenda mais avançada para tatuadores do mercado, com controle de sinais, reserva de materiais, gestão de espaços e muito mais.</p>
+          <ul class="list-unstyled">
+            <li class="mb-3"><i class="fas fa-check text-primary me-2"></i> Controle de sinais e pagamentos parciais</li>
+            <li class="mb-3"><i class="fas fa-check text-primary me-2"></i> Referências anexadas a cada agendamento</li>
+            <li class="mb-3"><i class="fas fa-check text-primary me-2"></i> Sincronização com Google Agenda</li>
+            <li class="mb-3"><i class="fas fa-check text-primary me-2"></i> Agendamento online para clientes</li>
+          </ul>
+        </div>
+        <div class="col-lg-6" data-aos="fade-right" data-aos-duration="1000" data-aos-delay="200">
+          <div class="feature-img-container">
+            <img src="agenda.png" alt="Agenda GestãoInk" class="img-fluid">
+          </div>
+        </div>
+      </div>
+
+      <!-- Feature 3: Anamnese -->
+      <div class="row align-items-center mb-5">
+        <div class="col-lg-6" data-aos="fade-right" data-aos-duration="1000">
+          <h3 class="fw-bold mb-4">Anamnese digital com assinatura eletrônica</h3>
+          <p class="mb-4">Elimine papéis e garanta segurança jurídica com nossa ficha de anamnese digital. Envie facilmente para seus clientes preencherem antes da sessão.</p>
+          <ul class="list-unstyled">
+            <li class="mb-3"><i class="fas fa-check text-primary me-2"></i> Formulário personalizado de acordo com seu estúdio</li>
+            <li class="mb-3"><i class="fas fa-check text-primary me-2"></i> Assinatura eletrônica com validade jurídica</li>
+            <li class="mb-3"><i class="fas fa-check text-primary me-2"></i> Envio direto para WhatsApp do cliente</li>
+            <li class="mb-3"><i class="fas fa-check text-primary me-2"></i> Armazenamento seguro e vinculado ao cadastro</li>
+          </ul>
+        </div>
+        <div class="col-lg-6" data-aos="fade-left" data-aos-duration="1000" data-aos-delay="200">
+          <div class="feature-img-container">
+            <img src="cadclientes.png" alt="Anamnese digital GestãoInk" class="img-fluid">
+          </div>
+        </div>
+      </div>
+
+      <!-- Feature 4: Financeiro -->
+      <div class="row align-items-center mb-5 flex-row-reverse">
+        <div class="col-lg-6" data-aos="fade-left" data-aos-duration="1000">
+          <h3 class="fw-bold mb-4">Controle financeiro completo</h3>
+          <p class="mb-4">Tenha uma visão clara das finanças do seu estúdio com relatórios detalhados, cálculo de comissões, controle de despesas e análise de performance.</p>
+          <ul class="list-unstyled">
+            <li class="mb-3"><i class="fas fa-check text-primary me-2"></i> Controle de caixa diário detalhado</li>
+            <li class="mb-3"><i class="fas fa-check text-primary me-2"></i> Cálculo automático de comissões para artistas</li>
+            <li class="mb-3"><i class="fas fa-check text-primary me-2"></i> Gestão de despesas e custos operacionais</li>
+            <li class="mb-3"><i class="fas fa-check text-primary me-2"></i> Emissão de nota fiscal de serviços (NFS-e)</li>
+            <li class="mb-3"><i class="fas fa-check text-primary me-2"></i> Relatórios e gráficos de desempenho</li>
+          </ul>
+        </div>
+        <div class="col-lg-6" data-aos="fade-right" data-aos-duration="1000" data-aos-delay="200">
+          <div class="feature-img-container">
+            <img src="controle de caixa.png" alt="Controle financeiro GestãoInk" class="img-fluid">
+          </div>
+        </div>
+      </div>
+
+      <!-- Feature 5: Estoque -->
+      <div class="row align-items-center mb-5">
+        <div class="col-lg-6" data-aos="fade-right" data-aos-duration="1000">
+          <h3 class="fw-bold mb-4">Gestão de estoque especializada para tatuagem</h3>
+          <p class="mb-4">Controle com precisão todos os materiais do seu estúdio, desde tintas até agulhas, evitando perdas e otimizando compras.</p>
+          <ul class="list-unstyled">
+            <li class="mb-3"><i class="fas fa-check text-primary me-2"></i> Cadastro detalhado de produtos específicos para tatuagem</li>
+            <li class="mb-3"><i class="fas fa-check text-primary me-2"></i> Alerta de produtos com estoque baixo</li>
+            <li class="mb-3"><i class="fas fa-check text-primary me-2"></i> Reserva de materiais para cada sessão</li>
+            <li class="mb-3"><i class="fas fa-check text-primary me-2"></i> Histórico de utilização por cliente e profissional</li>
+          </ul>
+        </div>
+        <div class="col-lg-6" data-aos="fade-left" data-aos-duration="1000" data-aos-delay="200">
+          <div class="feature-img-container">
+            <img src="estoque.png" alt="Gestão de estoque GestãoInk" class="img-fluid">
+          </div>
+        </div>
+      </div>
+
+      <!-- Feature 6: CRM -->
+      <div class="row align-items-center mb-5 flex-row-reverse">
+        <div class="col-lg-6" data-aos="fade-left" data-aos-duration="1000">
+          <h3 class="fw-bold mb-4">CRM completo para fidelizar seus clientes</h3>
+          <p class="mb-4">Construa relacionamentos duradouros com seus clientes através de acompanhamento personalizado, desde o primeiro contato até o pós-atendimento.</p>
+          <ul class="list-unstyled">
+            <li class="mb-3"><i class="fas fa-check text-primary me-2"></i> Acompanhamento de cicatrização automatizado</li>
+            <li class="mb-3"><i class="fas fa-check text-primary me-2"></i> Notificações de aniversário dos clientes</li>
+            <li class="mb-3"><i class="fas fa-check text-primary me-2"></i> Pesquisa de satisfação após cada sessão</li>
+            <li class="mb-3"><i class="fas fa-check text-primary me-2"></i> Sistema de indicação e benefícios para clientes fiéis</li>
+            <li class="mb-3"><i class="fas fa-check text-primary me-2"></i> Automação de mensagens via WhatsApp</li>
+          </ul>
+        </div>
+        <div class="col-lg-6" data-aos="fade-right" data-aos-duration="1000" data-aos-delay="200">
+          <div class="feature-img-container">
+            <img src="cicatrizacao.png" alt="CRM GestãoInk" class="img-fluid">
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Benefits Section -->
+  <section class="section" id="beneficios" style="background-color: #0a0a0a;">
+    <div class="container">
+      <div class="text-center mb-5" data-aos="fade-up">
+        <h2 class="fw-bold mb-3">Por que escolher o GestãoInk</h2>
+        <p class="lead">Vantagens que transformam seu estúdio e potencializam seus resultados</p>
+      </div>
+
+      <div class="row g-4">
+        <!-- Benefit 1 -->
+        <div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
+          <div class="card h-100 p-4">
+            <div class="feature-icon">
+              <i class="fas fa-bolt"></i>
+            </div>
+            <h4 class="fw-bold mb-3">Mais produtividade</h4>
+            <p>Reduza em até 70% o tempo gasto com tarefas administrativas e foque no que realmente importa: criar arte.</p>
+          </div>
+        </div>
+
+        <!-- Benefit 2 -->
+        <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
+          <div class="card h-100 p-4">
+            <div class="feature-icon">
+              <i class="fas fa-chart-line"></i>
+            </div>
+            <h4 class="fw-bold mb-3">Aumento de vendas</h4>
+            <p>Aumente em até 30% sua taxa de conversão de orçamentos com respostas rápidas e acompanhamento eficiente.</p>
+          </div>
+        </div>
+
+        <!-- Benefit 3 -->
+        <div class="col-md-4" data-aos="fade-up" data-aos-delay="300">
+          <div class="card h-100 p-4">
+            <div class="feature-icon">
+              <i class="fas fa-users"></i>
+            </div>
+            <h4 class="fw-bold mb-3">Fidelização de clientes</h4>
+            <p>Construa relacionamentos duradouros com seus clientes através de acompanhamento personalizado e automático.</p>
+          </div>
+        </div>
+
+        <!-- Benefit 4 -->
+        <div class="col-md-4" data-aos="fade-up" data-aos-delay="400">
+          <div class="card h-100 p-4">
+            <div class="feature-icon">
+              <i class="fas fa-lock"></i>
+            </div>
+            <h4 class="fw-bold mb-3">Segurança de dados</h4>
+            <p>Todos os seus dados e informações de clientes armazenados com segurança e conformidade com a LGPD.</p>
+          </div>
+        </div>
+
+        <!-- Benefit 5 -->
+        <div class="col-md-4" data-aos="fade-up" data-aos-delay="500">
+          <div class="card h-100 p-4">
+            <div class="feature-icon">
+              <i class="fas fa-mobile-alt"></i>
+            </div>
+            <h4 class="fw-bold mb-3">Acesso em qualquer lugar</h4>
+            <p>Gerencie seu estúdio de qualquer dispositivo, a qualquer hora, com nossa plataforma 100% online.</p>
+          </div>
+        </div>
+
+        <!-- Benefit 6 -->
+        <div class="col-md-4" data-aos="fade-up" data-aos-delay="600">
+          <div class="card h-100 p-4">
+            <div class="feature-icon">
+              <i class="fas fa-sync"></i>
+            </div>
+            <h4 class="fw-bold mb-3">Automatização inteligente</h4>
+            <p>Automatize tarefas repetitivas como lembretes, acompanhamento e comunicados para seus clientes.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- More Features Grid -->
+  <section class="section">
+    <div class="container">
+      <div class="text-center mb-5" data-aos="fade-up">
+        <h2 class="fw-bold mb-3">Mais recursos para impulsionar seu estúdio</h2>
+        <p class="lead">Tudo em uma única plataforma integrada</p>
+      </div>
+
+      <div class="row g-4">
+        <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="100">
+          <div class="card h-100">
+            <div class="feature-img-container">
+              <img src="kanban orcamentos.png" alt="Kanban de Orçamentos" class="img-fluid">
+            </div>
+            <div class="card-body">
+              <h5 class="fw-bold mb-3">Kanban de Orçamentos</h5>
+              <p>Gerencie visualmente o fluxo de orçamentos e aumente sua taxa de conversão.</p>
             </div>
           </div>
-          <div class="u-black u-menu-overlay u-opacity u-opacity-70"></div>
         </div>
-      </nav>
-      <a class="u-login u-login-1 login_gestaoink" href="https://gestaoink.tech/dashboard/logingestaoink" title="Login"
-        target="_blank">Login</a>
-      <a href="https://gestaoink.tech/dashboard/logingestaoink"
-        class="login_gestaoink u-border-none u-btn u-btn-round u-button-style u-custom-color-1 u-radius-6 u-btn-1">Comece
-        Já</a>
+
+        <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="200">
+          <div class="card h-100">
+            <div class="feature-img-container">
+              <img src="comissao.png" alt="Controle de Comissões" class="img-fluid">
+            </div>
+            <div class="card-body">
+              <h5 class="fw-bold mb-3">Controle de Comissões</h5>
+              <p>Calcule automaticamente as comissões dos profissionais com total transparência.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="300">
+          <div class="card h-100">
+            <div class="feature-img-container">
+              <img src="automacoes.png" alt="Automações de WhatsApp" class="img-fluid">
+            </div>
+            <div class="card-body">
+              <h5 class="fw-bold mb-3">Automações de WhatsApp</h5>
+              <p>Envie mensagens automáticas para seus clientes em momentos estratégicos.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="400">
+          <div class="card h-100">
+            <div class="feature-img-container">
+              <img src="feedback.png" alt="Coleta de Feedback" class="img-fluid">
+            </div>
+            <div class="card-body">
+              <h5 class="fw-bold mb-3">Coleta de Feedback</h5>
+              <p>Melhore continuamente seu serviço com feedback estruturado dos clientes.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="500">
+          <div class="card h-100">
+            <div class="feature-img-container">
+              <img src="reserva.png" alt="Agendamento Online" class="img-fluid">
+            </div>
+            <div class="card-body">
+              <h5 class="fw-bold mb-3">Agendamento Online</h5>
+              <p>Permita que seus clientes agendem horários diretamente pelo seu site.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="600">
+          <div class="card h-100">
+            <div class="feature-img-container">
+              <img src="graficos.png" alt="Análise de Desempenho" class="img-fluid">
+            </div>
+            <div class="card-body">
+              <h5 class="fw-bold mb-3">Análise de Desempenho</h5>
+              <p>Visualize métricas e dados para tomar decisões estratégicas para seu negócio.</p>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
-  </header>
-  <section class="u-clearfix u-section-1" id="sec-247d">
-    <div class="u-clearfix u-sheet u-sheet-1">
-      <div class="u-clearfix u-expanded-width u-layout-wrap u-layout-wrap-1">
-        <div class="u-layout">
-          <div class="u-layout-col">
-            <div class="u-size-40">
-              <div class="u-layout-row">
-                <div class="u-container-style u-layout-cell u-size-30 u-layout-cell-1">
-                  <div class="u-container-layout u-valign-bottom-xs u-container-layout-1">
-                    <h1 class="u-text u-text-default u-text-1"> Gestão completa de estúdios de tatuagem</h1>
-                    <h6 class="u-custom-font u-font-montserrat u-text u-text-2"> Organize as tarefas, financeiro,
-                      agenda, orçamentos, estoque e outras áreas do seu estúdio de tatuagem, ferramenta fundamental para
-                      ganhar novos clientes, evitar surpresas e planejar seu crescimento!</h6>
-                    <a href="https://gestaoink.tech/dashboard/logingestaoink"
-                      class="login_gestaoink u-border-2 u-border-grey-75 u-btn u-btn-round u-button-style u-custom-color-1 u-hover-custom-color-2 u-radius-3 u-text-body-alt-color u-text-hover-white u-btn-1"
-                      target="_blank">Teste Grátis por 5 dias&nbsp;<span
-                        class="u-file-icon u-icon u-text-white u-icon-1"><img src="images/318476-abde9bc7.png"
-                          alt=""></span>
-                    </a>
+  </section>
+
+  <!-- Cases Section -->
+  <section class="section" id="casos" style="background-color: #0a0a0a;">
+    <div class="container">
+      <div class="text-center mb-5" data-aos="fade-up">
+        <h2 class="fw-bold mb-3">Estúdios que transformaram sua gestão</h2>
+        <p class="lead">Grandes nomes da tatuagem utilizam o GestãoInk para crescer</p>
+      </div>
+
+      <div class="row g-4 justify-content-center">
+        <div class="col-6 col-md-3" data-aos="fade-up" data-aos-delay="100">
+          <div class="bg-dark p-4 rounded-3 text-center">
+            <img src="images/146473349_1866819483471023_7445271751955426073_n.png" alt="Studio Case 1" class="img-fluid mb-3" style="max-height: 100px;">
+          </div>
+        </div>
+        <div class="col-6 col-md-3" data-aos="fade-up" data-aos-delay="200">
+          <div class="bg-dark p-4 rounded-3 text-center">
+            <img src="images/Screenshot_1-removebg-preview.png" alt="Studio Case 2" class="img-fluid mb-3" style="max-height: 100px;">
+          </div>
+        </div>
+        <div class="col-6 col-md-3" data-aos="fade-up" data-aos-delay="300">
+          <div class="bg-dark p-4 rounded-3 text-center">
+            <img src="images/Screenshot_2-removebg-preview.png" alt="Studio Case 3" class="img-fluid mb-3" style="max-height: 100px;">
+          </div>
+        </div>
+        <div class="col-6 col-md-3" data-aos="fade-up" data-aos-delay="400">
+          <div class="bg-dark p-4 rounded-3 text-center">
+            <img src="images/30710875_1655436247885760_1929487387818044722_n.png" alt="Studio Case 4" class="img-fluid mb-3" style="max-height: 100px;">
+          </div>
+        </div>
+      </div>
+
+      <!-- Testimonials -->
+      <div class="mt-5">
+        <div class="swiper testimonialSwiper" data-aos="fade-up">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide">
+              <div class="testimonial-card">
+                <p class="mb-4">"O GestãoInk revolucionou nosso estúdio. A organização dos orçamentos e agendamentos melhorou nossa taxa de conversão em mais de 40%. Não consigo imaginar voltar a trabalhar sem ele."</p>
+                <div class="d-flex align-items-center">
+                  <div class="rounded-circle overflow-hidden me-3" style="width: 50px; height: 50px;">
+                    <img src="https://randomuser.me/api/portraits/men/41.jpg" alt="Avatar" class="img-fluid">
+                  </div>
+                  <div>
+                    <h5 class="mb-0 fw-bold">Carlos Silva</h5>
+                    <p class="mb-0 text-muted">Proprietário, Studio Ink Art</p>
                   </div>
                 </div>
-                <div class="u-container-style u-image u-layout-cell u-size-30 u-image-1" data-image-width="1080"
-                  data-image-height="1080">
-                  <div class="u-container-layout u-container-layout-2"></div>
-                </div>
               </div>
             </div>
-            <div class="u-size-20">
-              <div class="u-layout-row">
-                <div class="u-container-style u-layout-cell u-size-37 u-layout-cell-3">
-                  <div class="u-container-layout u-container-layout-3">
-                    <p class="u-text u-text-default u-text-3"> Segurança dos seus&nbsp;<br>dados em primeiro lugar
-                    </p>
-                    <p class="u-text u-text-default u-text-4"> Acesse quando quiser,&nbsp;<br>no celular ou computador
-                    </p><span class="u-file-icon u-grey-10 u-icon u-text-grey-70 u-icon-2"><img
-                        src="images/709701-f7bf92ec.png" alt=""></span><span
-                      class="u-file-icon u-grey-10 u-icon u-text-grey-70 u-icon-3"><img
-                        src="images/7018021-b64c009e.png" alt=""></span>
+            <div class="swiper-slide">
+              <div class="testimonial-card">
+                <p class="mb-4">"A automação do acompanhamento de cicatrização e os lembretes via WhatsApp impressionam nossos clientes. Eles sempre comentam sobre como somos organizados e atenciosos."</p>
+                <div class="d-flex align-items-center">
+                  <div class="rounded-circle overflow-hidden me-3" style="width: 50px; height: 50px;">
+                    <img src="https://randomuser.me/api/portraits/women/63.jpg" alt="Avatar" class="img-fluid">
+                  </div>
+                  <div>
+                    <h5 class="mb-0 fw-bold">Ana Martins</h5>
+                    <p class="mb-0 text-muted">Tatuadora, Blackwork Studio</p>
                   </div>
                 </div>
-                <div class="u-container-style u-layout-cell u-size-23 u-layout-cell-4">
-                  <div class="u-container-layout u-container-layout-4"></div>
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <div class="testimonial-card">
+                <p class="mb-4">"O controle financeiro do GestãoInk nos ajudou a identificar onde estávamos perdendo dinheiro e a otimizar nossos investimentos. Em 6 meses, aumentamos nosso lucro em 35%."</p>
+                <div class="d-flex align-items-center">
+                  <div class="rounded-circle overflow-hidden me-3" style="width: 50px; height: 50px;">
+                    <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Avatar" class="img-fluid">
+                  </div>
+                  <div>
+                    <h5 class="mb-0 fw-bold">Rafael Costa</h5>
+                    <p class="mb-0 text-muted">Gerente, Ink Masters</p>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
+          <div class="swiper-pagination"></div>
         </div>
       </div>
     </div>
   </section>
-  <section class="u-carousel u-slide u-block-1741-1" id="carousel_a4a4" data-interval="5000" data-u-ride="carousel">
-    <ol class="u-absolute-hcenter u-carousel-indicators u-block-1741-2">
-      <li data-u-target="#carousel_a4a4" data-u-slide-to="0" class="u-active u-grey-30"></li>
-      <li data-u-target="#carousel_a4a4" class="u-grey-30" data-u-slide-to="1"></li>
-    </ol>
-    <div class="u-carousel-inner" role="listbox">
-      <div class="u-active u-align-center u-carousel-item u-clearfix u-section-2-1">
-        <div class="u-clearfix u-sheet u-sheet-1">
-          <h2 class="u-custom-font u-font-montserrat u-text u-text-default u-text-1">Cases<a
-              href="https://www.dictionary.com/e/emoji/military-medal-emoji/" target="_blank" rel="noopener"
-              class="u-active-none u-border-none u-btn u-button-style u-hover-none u-none u-text-palette-1-base u-btn-1">🎖️</a>
-          </h2>
-          <div class="u-expanded-width u-list u-list-1">
-            <div class="u-repeater u-repeater-1">
-              <div class="u-container-style u-list-item u-repeater-item">
-                <div class="u-container-layout u-similar-container u-valign-middle u-container-layout-1">
-                  <img alt="" class="u-expanded-width-xs u-image u-image-contain u-image-default u-image-1"
-                    data-image-width="1895" data-image-height="1895"
-                    src="images/146473349_1866819483471023_7445271751955426073_n.png">
-                </div>
-              </div>
-              <div class="u-container-style u-list-item u-repeater-item">
-                <div class="u-container-layout u-similar-container u-valign-middle u-container-layout-2">
-                  <img alt="" class="u-expanded-width-xs u-image u-image-contain u-image-default u-image-2"
-                    data-image-width="247" data-image-height="219" src="images/Screenshot_1-removebg-preview.png">
-                </div>
-              </div>
-              <div class="u-container-style u-list-item u-repeater-item">
-                <div class="u-container-layout u-similar-container u-valign-middle u-container-layout-3">
-                  <img alt="" class="u-expanded-width-xs u-image u-image-contain u-image-default u-image-3"
-                    data-image-width="225" data-image-height="200" src="images/Screenshot_2-removebg-preview.png">
-                </div>
-              </div>
-              <div class="u-container-style u-list-item u-repeater-item">
-                <div class="u-container-layout u-similar-container u-valign-middle u-container-layout-4">
-                  <img alt="" class="u-expanded-width-xs u-image u-image-contain u-image-default u-image-4"
-                    data-image-width="600" data-image-height="600"
-                    src="images/30710875_1655436247885760_1929487387818044722_n.png">
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="u-align-center u-carousel-item u-clearfix u-section-2-2">
-        <div class="u-align-left u-clearfix u-sheet u-sheet-1">
-          <div class="u-expanded-width u-list u-list-1">
-            <div class="u-repeater u-repeater-1">
-              <div class="u-container-style u-list-item u-repeater-item">
-                <div class="u-container-layout u-similar-container u-valign-middle u-container-layout-1">
-                  <img alt="" class="u-expanded-width-xs u-image u-image-contain u-image-default u-image-1"
-                    data-image-width="1895" data-image-height="1895"
-                    src="images/146473349_1866819483471023_7445271751955426073_n.png">
-                </div>
-              </div>
-              <div class="u-container-style u-list-item u-repeater-item">
-                <div class="u-container-layout u-similar-container u-valign-middle u-container-layout-2">
-                  <img alt="" class="u-expanded-width-xs u-image u-image-contain u-image-default u-image-2"
-                    data-image-width="247" data-image-height="219" src="images/Screenshot_1-removebg-preview.png">
-                </div>
-              </div>
-              <div class="u-container-style u-list-item u-repeater-item">
-                <div class="u-container-layout u-similar-container u-valign-middle u-container-layout-3">
-                  <img alt="" class="u-expanded-width-xs u-image u-image-contain u-image-default u-image-3"
-                    data-image-width="225" data-image-height="200" src="images/Screenshot_2-removebg-preview.png">
-                </div>
-              </div>
-              <div class="u-container-style u-list-item u-repeater-item">
-                <div class="u-container-layout u-similar-container u-valign-middle u-container-layout-4">
-                  <img alt="" class="u-expanded-width-xs u-image u-image-contain u-image-default u-image-4"
-                    data-image-width="600" data-image-height="600"
-                    src="images/30710875_1655436247885760_1929487387818044722_n.png">
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <a class="u-absolute-vcenter u-carousel-control u-carousel-control-prev u-text-grey-30 u-block-1741-3"
-      href="#carousel_a4a4" role="button" data-u-slide="prev">
-      <span aria-hidden="true">
-        <svg class="u-svg-link" viewBox="0 0 477.175 477.175">
-          <path d="M145.188,238.575l215.5-215.5c5.3-5.3,5.3-13.8,0-19.1s-13.8-5.3-19.1,0l-225.1,225.1c-5.3,5.3-5.3,13.8,0,19.1l225.1,225
-                    c2.6,2.6,6.1,4,9.5,4s6.9-1.3,9.5-4c5.3-5.3,5.3-13.8,0-19.1L145.188,238.575z"></path>
-        </svg>
-      </span>
-      <span class="sr-only">Previous</span>
-    </a>
-    <a class="u-absolute-vcenter u-carousel-control u-carousel-control-next u-text-grey-30 u-block-1741-4"
-      href="#carousel_a4a4" role="button" data-u-slide="next">
-      <span aria-hidden="true">
-        <svg class="u-svg-link" viewBox="0 0 477.175 477.175">
-          <path
-            d="M360.731,229.075l-225.1-225.1c-5.3-5.3-13.8-5.3-19.1,0s-5.3,13.8,0,19.1l215.5,215.5l-215.5,215.5
-                    c-5.3,5.3-5.3,13.8,0,19.1c2.6,2.6,6.1,4,9.5,4c3.4,0,6.9-1.3,9.5-4l225.1-225.1C365.931,242.875,365.931,234.275,360.731,229.075z">
-          </path>
-        </svg>
-      </span>
-      <span class="sr-only">Next</span>
-    </a>
-  </section>
-  <section class="u-align-center u-clearfix u-section-3" id="sec-8009">
-    <div class="u-clearfix u-sheet u-sheet-1">
-      <h2 class="u-custom-font u-font-montserrat u-text u-text-default u-text-1">Funções Exclusivas</h2>
-      <div class="u-expanded-width u-list u-list-1">
-        <div class="u-repeater u-repeater-1">
-          <div class="u-align-center u-container-style u-list-item u-repeater-item">
-            <div class="u-container-layout u-similar-container u-valign-top-sm u-valign-top-xs u-container-layout-1">
-              <span class="u-custom-color-1 u-icon u-icon-circle u-text-white u-icon-1"><svg class="u-svg-link"
-                  preserveAspectRatio="xMidYMin slice" viewBox="0 0 54.757 54.757" style="">
-                  <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#svg-32a4"></use>
-                </svg><svg class="u-svg-content" viewBox="0 0 54.757 54.757" x="0px" y="0px" id="svg-32a4"
-                  style="enable-background:new 0 0 54.757 54.757;">
-                  <g>
-                    <path d="M27.557,12c-3.859,0-7,3.141-7,7s3.141,7,7,7s7-3.141,7-7S31.416,12,27.557,12z M27.557,24c-2.757,0-5-2.243-5-5
-		s2.243-5,5-5s5,2.243,5,5S30.314,24,27.557,24z"></path>
-                    <path d="M40.94,5.617C37.318,1.995,32.502,0,27.38,0c-5.123,0-9.938,1.995-13.56,5.617c-6.703,6.702-7.536,19.312-1.804,26.952
-		L27.38,54.757L42.721,32.6C48.476,24.929,47.643,12.319,40.94,5.617z M41.099,31.431L27.38,51.243L13.639,31.4
-		C8.44,24.468,9.185,13.08,15.235,7.031C18.479,3.787,22.792,2,27.38,2s8.901,1.787,12.146,5.031
-		C45.576,13.08,46.321,24.468,41.099,31.431z"></path>
-                  </g>
-                </svg>
 
+  <!-- Demo Section -->
+  <section class="section" id="demo">
+    <div class="container">
+      <div class="text-center mb-5" data-aos="fade-up">
+        <h2 class="fw-bold mb-3">Veja o GestãoInk em ação</h2>
+        <p class="lead">Descubra como nossa plataforma pode transformar seu estúdio</p>
+      </div>
 
-              </span>
-              <h3 class="u-custom-font u-font-montserrat u-text u-text-2">Orçamentos</h3>
-              <p class="u-text u-text-3"> Cada estúdio ao criar sua conta ganha um site para receber orçamentos, os
-                orçamentos solicitados pelo site, aparecem no sistema por ordem de chegada.</p>
-              <a href="https://youtube.com/gestaoink"
-                class="u-active-none u-border-2 u-border-custom-color-1 u-border-no-left u-border-no-right u-border-no-top u-btn u-btn-rectangle u-button-style u-hover-none u-none u-text-body-color u-btn-1"
-                target="_blank">saiba mais</a>
-            </div>
-          </div>
-          <div class="u-align-center u-container-style u-list-item u-repeater-item">
-            <div class="u-container-layout u-similar-container u-valign-top-sm u-valign-top-xs u-container-layout-2">
-              <span class="u-custom-color-1 u-file-icon u-icon u-icon-circle u-text-white u-icon-2"><img
-                  src="images/1171977-d0ed43b6.png" alt=""></span>
-              <h3 class="u-custom-font u-font-montserrat u-text u-text-4">Agenda</h3>
-              <p class="u-text u-text-5"> A agenda mais completa para tatuadores, com controle de sinal, referências em
-                anexo, reserva de materias a utilizar, reserva de espaço(maca,sala,etc), link para cliente reservar
-                online, criar lista de espera, integração com WhatsApp, Google Agenda.</p>
-              <a href="https://youtube.com/gestaoink"
-                class="u-active-none u-border-2 u-border-custom-color-1 u-border-no-left u-border-no-right u-border-no-top u-btn u-btn-rectangle u-button-style u-hover-none u-text-body-color u-btn-2">
-                saiba mais</a>
-            </div>
-          </div>
-          <div class="u-align-center u-container-style u-list-item u-repeater-item">
-            <div class="u-container-layout u-similar-container u-valign-top-sm u-valign-top-xs u-container-layout-3">
-              <span class="u-custom-color-1 u-file-icon u-icon u-icon-circle u-text-white u-icon-3"><img
-                  src="images/1358533-1001c216.png" alt=""></span>
-              <h3 class="u-custom-font u-font-montserrat u-text u-text-6">Anamnese</h3>
-              <p class="u-text u-text-7"> Ficha anamnese com assinatura digital, totalmente personalizável, poderá
-                enviar um link direto no WhatsApp do seu cliente, para ele preencher e assinar, e a ficha ficará anexada
-                ao cadastro do cliente no sistema.</p>
-              <a href="https://youtube.com/gestaoink"
-                class="u-active-none u-border-2 u-border-custom-color-1 u-border-no-left u-border-no-right u-border-no-top u-btn u-btn-rectangle u-button-style u-hover-none u-text-body-color u-btn-3">
-                saiba mais</a>
-            </div>
-          </div>
-          <div class="u-align-center u-container-style u-list-item u-repeater-item">
-            <div class="u-container-layout u-similar-container u-valign-top-sm u-valign-top-xs u-container-layout-4">
-              <span class="u-custom-color-1 u-file-icon u-icon u-icon-circle u-text-white u-icon-4"><img
-                  src="images/2058768-15ec127a.png" alt=""></span>
-              <h3 class="u-custom-font u-font-montserrat u-text u-text-8">Serviços</h3>
-              <p class="u-text u-text-9"> Cadastre os serviços com fotos, acompanhamento por sessão, pagamentos
-                pendentes, organizar por estilo, profissional, e materiais utilizados na sessão, além de NFSE.</p>
-              <a href="https://youtube.com/gestaoink"
-                class="u-active-none u-border-2 u-border-custom-color-1 u-border-no-left u-border-no-right u-border-no-top u-btn u-btn-rectangle u-button-style u-hover-none u-none u-text-body-color u-btn-4"
-                target="_blank"> saiba mais</a>
-            </div>
-          </div>
-          <div class="u-align-center u-container-style u-list-item u-repeater-item">
-            <div class="u-container-layout u-similar-container u-valign-top-sm u-valign-top-xs u-container-layout-5">
-              <span class="u-custom-color-1 u-file-icon u-icon u-icon-circle u-text-white u-icon-5"><img
-                  src="images/547166-60843f25.png" alt=""></span>
-              <h3 class="u-custom-font u-font-montserrat u-text u-text-10">Controle Financeiro</h3>
-              <p class="u-text u-text-11"> Todas as funções do sistema são integradas ao financeiro do sistema, poderá
-                realizar agendamentos com sinal, controle de despesas do estúdio, cálculo de comissão, registrar vendas
-                e serviços, e tudo irá aparecer no caixa do dia, e no financeiro do sistema, que poderá analisar através
-                de gráficos e métricas como metas.</p>
-              <a href="https://youtube.com/gestaoink"
-                class="u-active-none u-border-2 u-border-custom-color-1 u-border-no-left u-border-no-right u-border-no-top u-btn u-btn-rectangle u-button-style u-hover-none u-text-body-color u-btn-5">
-                saiba mais</a>
-            </div>
-          </div>
-          <div class="u-align-center u-container-style u-list-item u-repeater-item">
-            <div class="u-container-layout u-similar-container u-valign-top-sm u-valign-top-xs u-container-layout-6">
-              <span class="u-custom-color-1 u-file-icon u-icon u-icon-circle u-text-white u-icon-6"><img
-                  src="images/1322236-4307934b.png" alt=""></span>
-              <h3 class="u-custom-font u-font-montserrat u-text u-text-12">Clientes</h3>
-              <p class="u-text u-text-13"> Acompanhamento de cicatrização, formulário digital de avaliação dos
-                atendimentos, envio de SMS marketing, lista de aniversariantes, entre outras ferramentas para deixar
-                seus clientes mais perto, fiéis, e ainda opção para dar benefícios para indicações.</p>
-              <a href="https://youtube.com/gestaoink"
-                class="u-active-none u-border-2 u-border-custom-color-1 u-border-no-left u-border-no-right u-border-no-top u-btn u-btn-rectangle u-button-style u-hover-none u-text-body-color u-btn-6"
-                target="_blank"> saiba mais</a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-  <section class="u-align-center u-clearfix u-white u-section-4" id="sec-dbaa">
-    <div class="u-clearfix u-sheet u-valign-middle-xs u-sheet-1">
-      <h2 class="u-custom-font u-font-montserrat u-text u-text-default u-text-1">Saiba mais!</h2>
-      <div class="u-align-left u-expanded-width-sm u-expanded-width-xs u-video u-video-1">
-        <div class="embed-responsive embed-responsive-1">
-          <iframe style="position: absolute;top: 0;left: 0;width: 100%;height: 100%;" class="embed-responsive-item"
-            src="https://www.youtube.com/embed/1OsBC_yhCMo?mute=0&amp;showinfo=0&amp;controls=0&amp;start=0"
-            frameborder="0" allowfullscreen=""></iframe>
-        </div>
-      </div>
-    </div>
-  </section>
-  <section class="u-align-center u-clearfix u-section-5" id="sec-9c60">
-    <div class="u-clearfix u-sheet u-sheet-1">
-      <h2 class="u-custom-font u-font-montserrat u-text u-text-default u-text-1">Planos Mensais</h2>
-      <div class="u-clearfix u-expanded-width u-gutter-20 u-layout-wrap u-layout-wrap-1">
-        <div class="u-layout">
-          <div class="u-layout-row" style="">
-            <div class="u-align-center u-container-style u-layout-cell u-left-cell u-size-20 u-layout-cell-1">
-              <div class="u-border-1 u-border-grey-30 u-container-layout u-container-layout-1">
-                <h4 class="u-align-center u-text u-text-2"> AUTÔNOMO</h4>
-                <h2 class="u-align-center u-text u-text-3">R$149</h2>
-                <p class="u-align-center u-text u-text-4">MENSAL<br>
-                  <br> 1 PROFISSIONAL<br>
-                  <br>SUPORTE EMAIL<br>
-                  <br>ARMAZENAMENTO ILIMITADO<br>
-                  <br>100% ONLINE<br>
-                  <br>DISPOSITIVOS SIMULTANEOS
-                </p>
-                <a href="https://pay.kiwify.com.br/ZTDJoCg"
-                  class="login_gestaoink u-border-1 u-border-grey-75 u-btn u-btn-rectangle u-button-style u-radius-0 u-btn-1"
-                  target="_blank">Assinar</a>
-              </div>
-            </div>
-            <div class="u-align-center u-container-style u-layout-cell u-size-20 u-layout-cell-2">
-              <div class="u-border-1 u-border-grey-30 u-container-layout u-valign-bottom u-container-layout-2">
-                <h4 class="u-align-center u-text u-text-5"> TATTOO STUDIO BASIC</h4>
-                <h2 class="u-align-center u-text u-text-6"> R$199</h2>
-                <p class="u-align-center u-text u-text-7"> MENSAL<br>
-                  <br> 5 PROFISSIONAIS<br>
-                  <br>SUPORTE EMAIL<br>
-                  <br>ARMAZENAMENTO ILIMITADO<br>
-                  <br>100% ONLINE<br>
-                  <br>DISPOSITIVOS SIMULTANEOS
-                </p>
-                <a href="https://pay.kiwify.com.br/BE6pceM"
-                  class="login_gestaoink u-border-none u-btn u-button-style u-custom-color-1 u-btn-2"
-                  target="_blank">Assinar</a>
-              </div>
-            </div>
-            <div class="u-align-center u-container-style u-layout-cell u-right-cell u-size-20 u-layout-cell-3">
-              <div class="u-border-1 u-border-grey-30 u-container-layout u-valign-top u-container-layout-3">
-                <h4 class="u-text u-text-8"> TATTOO STUDIO PRO</h4>
-                <h3 class="u-text u-text-9"> R$299</h3>
-                <p class="u-text u-text-10"> MENSAL<br>
-                  <br> 15 PROFISSIONAIS<br>
-                  <br>SUPORTE EMAIL<br>
-                  <br>ARMAZENAMENTO ILIMITADO<br>
-                  <br>100% ONLINE<br>
-                  <br>DISPOSITIVOS SIMULTANEOS
-                </p>
-                <a href="https://pay.kiwify.com.br/TiuLiek"
-                  class="login_gestaoink u-border-1 u-border-grey-75 u-btn u-button-style u-btn-3"
-                  target="_blank">Assinar</a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-  <section class="u-align-center u-clearfix u-section-6" id="carousel_83e8">
-    <div class="u-clearfix u-sheet u-sheet-1">
-      <h2 class="u-custom-font u-font-montserrat u-text u-text-default u-text-1">Planos Anuais</h2>
-      <div class="u-clearfix u-expanded-width u-gutter-20 u-layout-wrap u-layout-wrap-1">
-        <div class="u-layout">
-          <div class="u-layout-row" style="">
-            <div class="u-align-center u-container-style u-layout-cell u-left-cell u-size-20 u-layout-cell-1">
-              <div class="u-border-1 u-border-grey-30 u-container-layout u-container-layout-1">
-                <h4 class="u-align-center u-text u-text-2"> AUTÔNOMO</h4>
-                <h2 class="u-align-center u-text u-text-3">R$1299</h2>
-                <p class="u-align-center u-text u-text-4">ANUAL<br>
-                  <br> 1 PROFISSIONAL<br>
-                  <br>SUPORTE EMAIL<br>
-                  <br>ARMAZENAMENTO ILIMITADO<br>
-                  <br>100% ONLINE<br>
-                  <br>DISPOSITIVOS SIMULTANEOS
-                </p>
-                <a href="https://pay.kiwify.com.br/lYGV9TK"
-                  class="login_gestaoink u-border-1 u-border-grey-75 u-btn u-btn-rectangle u-button-style u-radius-0 u-btn-1"
-                  target="_blank">Assinar</a>
-              </div>
-            </div>
-            <div class="u-align-center u-container-style u-layout-cell u-size-20 u-layout-cell-2">
-              <div class="u-border-1 u-border-grey-30 u-container-layout u-valign-bottom u-container-layout-2">
-                <h4 class="u-align-center u-text u-text-5"> TATTOO STUDIO BASIC</h4>
-                <h2 class="u-align-center u-text u-text-6"> R$1499</h2>
-                <p class="u-align-center u-text u-text-7"> ANUAL<br>
-                  <br> 5 PROFISSIONAIS<br>
-                  <br>SUPORTE EMAIL<br>
-                  <br>ARMAZENAMENTO ILIMITADO<br>
-                  <br>100% ONLINE<br>
-                  <br>DISPOSITIVOS SIMULTANEOS
-                </p>
-                <a href="https://pay.kiwify.com.br/1NfkNVB"
-                  class="login_gestaoink u-border-none u-btn u-button-style u-custom-color-1 u-btn-2"
-                  target="_blank">Assinar</a>
-              </div>
-            </div>
-            <div class="u-align-center u-container-style u-layout-cell u-right-cell u-size-20 u-layout-cell-3">
-              <div class="u-border-1 u-border-grey-30 u-container-layout u-valign-top u-container-layout-3">
-                <h4 class="u-text u-text-8"> TATTOO STUDIO PRO</h4>
-                <h3 class="u-text u-text-9"> R$2499</h3>
-                <p class="u-text u-text-10"> ANUAL<br>
-                  <br> 15 PROFISSIONAIS<br>
-                  <br>SUPORTE EMAIL<br>
-                  <br>ARMAZENAMENTO ILIMITADO<br>
-                  <br>100% ONLINE<br>
-                  <br>DISPOSITIVOS SIMULTANEOS
-                </p>
-                <a href="https://pay.kiwify.com.br/zYam7iC"
-                  class="login_gestaoink u-border-1 u-border-grey-75 u-btn u-button-style u-btn-3"
-                  target="_blank">Assinar</a>
-              </div>
-            </div>
+      <div class="row justify-content-center">
+        <div class="col-lg-10" data-aos="zoom-in">
+          <div class="ratio ratio-16x9 rounded-3 overflow-hidden shadow-lg">
+            <iframe src="https://www.youtube.com/embed/1OsBC_yhCMo?autoplay=0&mute=0&controls=1" title="GestãoInk Demo" allowfullscreen></iframe>
           </div>
         </div>
       </div>
     </div>
   </section>
 
+  <!-- Pricing Section -->
+  <section class="section" id="planos" style="background-color: #0a0a0a;">
+    <div class="container">
+      <div class="text-center mb-5" data-aos="fade-up">
+        <h2 class="fw-bold mb-3">Escolha o plano ideal para seu estúdio</h2>
+        <p class="lead">Invista no crescimento do seu negócio com uma solução completa</p>
+        
+        <!-- Pricing Toggle -->
+        <div class="d-flex justify-content-center align-items-center mt-4">
+          <span class="me-3 fw-bold">Mensal</span>
+          <div class="form-check form-switch d-inline-block">
+            <input class="form-check-input" type="checkbox" id="pricingToggle" style="width: 60px; height: 30px;">
+            <label class="form-check-label" for="pricingToggle"></label>
+          </div>
+          <span class="ms-3 fw-bold">Anual <span class="badge bg-primary">Economize 30%</span></span>
+        </div>
+      </div>
 
-  <footer class="u-align-center-md u-align-center-sm u-align-center-xs u-clearfix u-footer u-grey-80" id="sec-c4fd">
-    <div class="u-clearfix u-sheet u-sheet-1">
-      <a href="https://gestaoink.com" class="u-image u-logo u-image-1" data-image-width="532" data-image-height="260"
-        title="gink">
-        <img src="images/logoescrita.png" class="u-logo-image u-logo-image-1">
-      </a>
-      <p class="u-align-center-lg u-align-center-md u-align-center-xl u-text u-text-1">Desenvolvido por <a
-          href="https://byte0.com.br"
-          class="u-active-none u-border-none u-btn u-button-link u-button-style u-hover-none u-none u-text-palette-1-base u-btn-1">byte0.com.br</a>
-      </p>
-      <div class="u-align-left u-social-icons u-spacing-10 u-social-icons-1">
-        <a class="u-social-url" title="facebook" target="_blank" href="https://www.facebook.com/gestaoink"><span
-            class="u-icon u-social-facebook u-social-icon u-icon-1"><svg class="u-svg-link"
-              preserveAspectRatio="xMidYMin slice" viewBox="0 0 112 112" style="">
-              <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#svg-6d83"></use>
-            </svg><svg class="u-svg-content" viewBox="0 0 112 112" x="0" y="0" id="svg-6d83">
-              <circle fill="currentColor" cx="56.1" cy="56.1" r="55"></circle>
-              <path fill="#FFFFFF" d="M73.5,31.6h-9.1c-1.4,0-3.6,0.8-3.6,3.9v8.5h12.6L72,58.3H60.8v40.8H43.9V58.3h-8V43.9h8v-9.2
-            c0-6.7,3.1-17,17-17h12.5v13.9H73.5z"></path>
-            </svg></span>
-        </a>
-        <a class="u-social-url" title="twitter" target="_blank" href="https://twitter.com/gestaoink"><span
-            class="u-icon u-social-icon u-social-twitter u-icon-2"><svg class="u-svg-link"
-              preserveAspectRatio="xMidYMin slice" viewBox="0 0 112 112" style="">
-              <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#svg-40ff"></use>
-            </svg><svg class="u-svg-content" viewBox="0 0 112 112" x="0" y="0" id="svg-40ff">
-              <circle fill="currentColor" class="st0" cx="56.1" cy="56.1" r="55"></circle>
-              <path fill="#FFFFFF" d="M83.8,47.3c0,0.6,0,1.2,0,1.7c0,17.7-13.5,38.2-38.2,38.2C38,87.2,31,85,25,81.2c1,0.1,2.1,0.2,3.2,0.2
-            c6.3,0,12.1-2.1,16.7-5.7c-5.9-0.1-10.8-4-12.5-9.3c0.8,0.2,1.7,0.2,2.5,0.2c1.2,0,2.4-0.2,3.5-0.5c-6.1-1.2-10.8-6.7-10.8-13.1
-            c0-0.1,0-0.1,0-0.2c1.8,1,3.9,1.6,6.1,1.7c-3.6-2.4-6-6.5-6-11.2c0-2.5,0.7-4.8,1.8-6.7c6.6,8.1,16.5,13.5,27.6,14
-            c-0.2-1-0.3-2-0.3-3.1c0-7.4,6-13.4,13.4-13.4c3.9,0,7.3,1.6,9.8,4.2c3.1-0.6,5.9-1.7,8.5-3.3c-1,3.1-3.1,5.8-5.9,7.4
-            c2.7-0.3,5.3-1,7.7-2.1C88.7,43,86.4,45.4,83.8,47.3z"></path>
-            </svg></span>
-        </a>
-        <a class="u-social-url" title="instagram" target="_blank" href="https://www.instagram.com/gestaoink/"><span
-            class="u-icon u-social-icon u-social-instagram u-icon-3"><svg class="u-svg-link"
-              preserveAspectRatio="xMidYMin slice" viewBox="0 0 112 112" style="">
-              <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#svg-5319"></use>
-            </svg><svg class="u-svg-content" viewBox="0 0 112 112" x="0" y="0" id="svg-5319">
-              <circle fill="currentColor" cx="56.1" cy="56.1" r="55"></circle>
-              <path fill="#FFFFFF"
-                d="M55.9,38.2c-9.9,0-17.9,8-17.9,17.9C38,66,46,74,55.9,74c9.9,0,17.9-8,17.9-17.9C73.8,46.2,65.8,38.2,55.9,38.2
-            z M55.9,66.4c-5.7,0-10.3-4.6-10.3-10.3c-0.1-5.7,4.6-10.3,10.3-10.3c5.7,0,10.3,4.6,10.3,10.3C66.2,61.8,61.6,66.4,55.9,66.4z">
-              </path>
-              <path fill="#FFFFFF"
-                d="M74.3,33.5c-2.3,0-4.2,1.9-4.2,4.2s1.9,4.2,4.2,4.2s4.2-1.9,4.2-4.2S76.6,33.5,74.3,33.5z"></path>
-              <path fill="#FFFFFF" d="M73.1,21.3H38.6c-9.7,0-17.5,7.9-17.5,17.5v34.5c0,9.7,7.9,17.6,17.5,17.6h34.5c9.7,0,17.5-7.9,17.5-17.5V38.8
-            C90.6,29.1,82.7,21.3,73.1,21.3z M83,73.3c0,5.5-4.5,9.9-9.9,9.9H38.6c-5.5,0-9.9-4.5-9.9-9.9V38.8c0-5.5,4.5-9.9,9.9-9.9h34.5
-            c5.5,0,9.9,4.5,9.9,9.9V73.3z"></path>
-            </svg></span>
-        </a>
-        <a class="u-social-url" title="linkedin" target="_blank"
-          href="https://www.linkedin.com/company/10319419/admin/"><span
-            class="u-icon u-social-icon u-social-linkedin u-icon-4"><svg class="u-svg-link"
-              preserveAspectRatio="xMidYMin slice" viewBox="0 0 112 112" style="">
-              <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#svg-6c15"></use>
-            </svg><svg class="u-svg-content" viewBox="0 0 112 112" x="0" y="0" id="svg-6c15">
-              <circle fill="currentColor" cx="56.1" cy="56.1" r="55"></circle>
-              <path fill="#FFFFFF" d="M41.3,83.7H27.9V43.4h13.4V83.7z M34.6,37.9L34.6,37.9c-4.6,0-7.5-3.1-7.5-7c0-4,3-7,7.6-7s7.4,3,7.5,7
-            C42.2,34.8,39.2,37.9,34.6,37.9z M89.6,83.7H76.2V62.2c0-5.4-1.9-9.1-6.8-9.1c-3.7,0-5.9,2.5-6.9,4.9c-0.4,0.9-0.4,2.1-0.4,3.3v22.5
-            H48.7c0,0,0.2-36.5,0-40.3h13.4v5.7c1.8-2.7,5-6.7,12.1-6.7c8.8,0,15.4,5.8,15.4,18.1V83.7z"></path>
-            </svg></span>
-        </a>
-        <a class="u-social-url" target="_blank" data-type="YouTube" title="YouTube"
-          href="https://www.youtube.com/gestaoink"><span class="u-icon u-social-icon u-social-youtube u-icon-5"><svg
-              class="u-svg-link" preserveAspectRatio="xMidYMin slice" viewBox="0 0 112 112" style="">
-              <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#svg-4c9f"></use>
-            </svg><svg class="u-svg-content" viewBox="0 0 112 112" x="0" y="0" id="svg-4c9f">
-              <circle fill="currentColor" cx="56.1" cy="56.1" r="55"></circle>
-              <path fill="#FFFFFF"
-                d="M74.9,33.3H37.3c-7.4,0-13.4,6-13.4,13.4v18.8c0,7.4,6,13.4,13.4,13.4h37.6c7.4,0,13.4-6,13.4-13.4V46.7 C88.3,39.3,82.3,33.3,74.9,33.3L74.9,33.3z M65.9,57l-17.6,8.4c-0.5,0.2-1-0.1-1-0.6V47.5c0-0.5,0.6-0.9,1-0.6l17.6,8.9 C66.4,56,66.4,56.8,65.9,57L65.9,57z">
-              </path>
-            </svg></span>
+      <div class="row g-4 justify-content-center">
+        <!-- Pricing Plan 1 -->
+        <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="100">
+          <div class="pricing-card">
+            <h4 class="fw-bold">AUTÔNOMO</h4>
+            <div class="price monthly-price">R$149<small>/mês</small></div>
+            <div class="price annual-price" style="display: none;">R$1.299<small>/ano</small></div>
+            <p class="text-muted mb-4">Perfeito para tatuadores independentes</p>
+            <ul class="list-unstyled text-start mb-4">
+              <li class="mb-3"><i class="fas fa-check text-primary me-2"></i> 1 profissional</li>
+              <li class="mb-3"><i class="fas fa-check text-primary me-2"></i> Armazenamento ilimitado</li>
+              <li class="mb-3"><i class="fas fa-check text-primary me-2"></i> Acesso a todas as funcionalidades</li>
+              <li class="mb-3"><i class="fas fa-check text-primary me-2"></i> Suporte por e-mail</li>
+              <li class="mb-3"><i class="fas fa-check text-primary me-2"></i> Acesso em múltiplos dispositivos</li>
+            </ul>
+            <a href="https://pay.kiwify.com.br/ZTDJoCg" class="btn btn-outline w-100 monthly-btn">Assinar Plano Mensal</a>
+            <a href="https://pay.kiwify.com.br/lYGV9TK" class="btn btn-outline w-100 annual-btn" style="display: none;">Assinar Plano Anual</a>
+          </div>
+        </div>
+
+        <!-- Pricing Plan 2 -->
+        <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="200">
+          <div class="pricing-card featured">
+            <span class="badge bg-primary position-absolute" style="top: -10px; right: 20px;">MAIS POPULAR</span>
+            <h4 class="fw-bold">TATTOO STUDIO BASIC</h4>
+            <div class="price monthly-price">R$199<small>/mês</small></div>
+            <div class="price annual-price" style="display: none;">R$1.499<small>/ano</small></div>
+            <p class="text-muted mb-4">Ideal para estúdios de pequeno a médio porte</p>
+            <ul class="list-unstyled text-start mb-4">
+              <li class="mb-3"><i class="fas fa-check text-primary me-2"></i> 5 profissionais</li>
+              <li class="mb-3"><i class="fas fa-check text-primary me-2"></i> Armazenamento ilimitado</li>
+              <li class="mb-3"><i class="fas fa-check text-primary me-2"></i> Acesso a todas as funcionalidades</li>
+              <li class="mb-3"><i class="fas fa-check text-primary me-2"></i> Suporte por e-mail prioritário</li>
+              <li class="mb-3"><i class="fas fa-check text-primary me-2"></i> Acesso em múltiplos dispositivos</li>
+            </ul>
+            <a href="https://pay.kiwify.com.br/BE6pceM" class="btn btn-primary w-100 monthly-btn">Assinar Plano Mensal</a>
+            <a href="https://pay.kiwify.com.br/1NfkNVB" class="btn btn-primary w-100 annual-btn" style="display: none;">Assinar Plano Anual</a>
+          </div>
+        </div>
+
+        <!-- Pricing Plan 3 -->
+        <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="300">
+          <div class="pricing-card">
+            <h4 class="fw-bold">TATTOO STUDIO PRO</h4>
+            <div class="price monthly-price">R$299<small>/mês</small></div>
+            <div class="price annual-price" style="display: none;">R$2.499<small>/ano</small></div>
+            <p class="text-muted mb-4">Para estúdios de médio a grande porte</p>
+            <ul class="list-unstyled text-start mb-4">
+              <li class="mb-3"><i class="fas fa-check text-primary me-2"></i> 15 profissionais</li>
+              <li class="mb-3"><i class="fas fa-check text-primary me-2"></i> Armazenamento ilimitado</li>
+              <li class="mb-3"><i class="fas fa-check text-primary me-2"></i> Acesso a todas as funcionalidades</li>
+              <li class="mb-3"><i class="fas fa-check text-primary me-2"></i> Suporte por e-mail VIP</li>
+              <li class="mb-3"><i class="fas fa-check text-primary me-2"></i> Acesso em múltiplos dispositivos</li>
+              <li class="mb-3"><i class="fas fa-check text-primary me-2"></i> Treinamento personalizado</li>
+            </ul>
+            <a href="https://pay.kiwify.com.br/TiuLiek" class="btn btn-outline w-100 monthly-btn">Assinar Plano Mensal</a>
+            <a href="https://pay.kiwify.com.br/zYam7iC" class="btn btn-outline w-100 annual-btn" style="display: none;">Assinar Plano Anual</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="text-center mt-5" data-aos="fade-up">
+        <p class="mb-4">Ainda tem dúvidas sobre qual plano escolher?</p>
+        <a href="https://api.whatsapp.com/send?phone=SEUNUMERODETELEFONE&text=Ol%C3%A1%2C%20gostaria%20de%20saber%20mais%20sobre%20o%20Gest%C3%A3oInk" class="btn btn-outline-light">
+          <i class="fab fa-whatsapp me-2"></i> Fale com um consultor
         </a>
       </div>
     </div>
-  </footer><span
-    style="height: 64px; width: 64px; margin-left: 0px; margin-right: auto; margin-top: 0px; background-image: none; right: 20px; bottom: 20px; padding: 15px;"
-    class="u-back-to-top u-custom-color-1 u-icon u-icon-circle u-opacity u-opacity-85" data-href="#">
-    <svg class="u-svg-link" preserveAspectRatio="xMidYMin slice" viewBox="0 0 551.13 551.13">
-      <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#svg-1d98"></use>
-    </svg>
-    <svg class="u-svg-content" enable-background="new 0 0 551.13 551.13" viewBox="0 0 551.13 551.13"
-      xmlns="http://www.w3.org/2000/svg" id="svg-1d98">
-      <path d="m275.565 189.451 223.897 223.897h51.668l-275.565-275.565-275.565 275.565h51.668z"></path>
-    </svg>
-  </span>
+  </section>
 
+  <!-- CTA Section -->
+  <section class="section text-center">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-lg-8" data-aos="fade-up">
+          <h2 class="fw-bold mb-4">Pronto para transformar seu estúdio de tatuagem?</h2>
+          <p class="lead mb-5">Junte-se a mais de 1000 estúdios que estão crescendo com o GestãoInk.</p>
+          <a href="https://gestaoink.tech/dashboard/logingestaoink" class="btn btn-primary btn-lg">Comece seu teste grátis de 5 dias</a>
+          <p class="mt-3 text-muted">Não é necessário cartão de crédito</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <div class="row g-4">
+        <div class="col-lg-4">
+          <img src="images/logoescrita.png" alt="GestãoInk" class="img-fluid mb-4" style="max-height: 60px;">
+          <p>O sistema de gestão mais completo para estúdios de tatuagem do Brasil.</p>
+          <div class="social-links mt-4">
+            <a href="https://www.facebook.com/gestaoink" target="_blank"><i class="fab fa-facebook-f"></i></a>
+            <a href="https://www.instagram.com/gestaoink/" target="_blank"><i class="fab fa-instagram"></i></a>
+            <a href="https://twitter.com/gestaoink" target="_blank"><i class="fab fa-twitter"></i></a>
+            <a href="https://www.linkedin.com/company/10319419/admin/" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+            <a href="https://www.youtube.com/gestaoink" target="_blank"><i class="fab fa-youtube"></i></a>
+          </div>
+        </div>
+        <div class="col-md-4 col-lg-2">
+          <h5 class="fw-bold mb-4">Links Rápidos</h5>
+          <ul class="list-unstyled">
+            <li class="mb-2"><a href="#home" class="text-decoration-none text-secondary">Início</a></li>
+            <li class="mb-2"><a href="#funcionalidades" class="text-decoration-none text-secondary">Funcionalidades</a></li>
+            <li class="mb-2"><a href="#beneficios" class="text-decoration-none text-secondary">Benefícios</a></li>
+            <li class="mb-2"><a href="#casos" class="text-decoration-none text-secondary">Cases</a></li>
+            <li class="mb-2"><a href="#planos" class="text-decoration-none text-secondary">Planos</a></li>
+          </ul>
+        </div>
+        <div class="col-md-4 col-lg-2">
+          <h5 class="fw-bold mb-4">Recursos</h5>
+          <ul class="list-unstyled">
+            <li class="mb-2"><a href="https://blog.gestaoink.site" class="text-decoration-none text-secondary">Blog</a></li>
+            <li class="mb-2"><a href="#" class="text-decoration-none text-secondary">Central de Ajuda</a></li>
+            <li class="mb-2"><a href="#" class="text-decoration-none text-secondary">Tutoriais</a></li>
+            <li class="mb-2"><a href="https://gestaoink.site/Política de Privacidade para a Tela de Permissão OAuth do Google Agenda API.pdf" target="_blank" class="text-decoration-none text-secondary">Política de Privacidade</a></li>
+            <li class="mb-2"><a href="#" class="text-decoration-none text-secondary">Termos de Uso</a></li>
+          </ul>
+        </div>
+        <div class="col-md-4 col-lg-4">
+          <h5 class="fw-bold mb-4">Contato</h5>
+          <ul class="list-unstyled">
+            <li class="mb-2"><i class="fas fa-envelope me-2 text-primary"></i> suporte@gestaoink.com</li>
+            <li class="mb-2"><i class="fas fa-phone-alt me-2 text-primary"></i> (xx) xxxx-xxxx</li>
+            <li class="mb-2"><i class="fas fa-map-marker-alt me-2 text-primary"></i> Brasil</li>
+          </ul>
+          <form class="mt-4">
+            <div class="input-group">
+              <input type="email" class="form-control" placeholder="Seu e-mail" aria-label="Seu e-mail">
+              <button class="btn btn-primary" type="button">Receber novidades</button>
+            </div>
+          </form>
+        </div>
+      </div>
+      <hr class="my-5" style="background-color: #333;">
+      <div class="row">
+        <div class="col-md-6">
+          <p class="mb-0">© 2023 GestãoInk. Todos os direitos reservados.</p>
+        </div>
+        <div class="col-md-6 text-md-end">
+          <p class="mb-0">Desenvolvido por <a href="https://byte0.com.br" class="text-decoration-none text-primary">byte0.com.br</a></p>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Back to Top Button -->
+  <div class="back-to-top">
+    <i class="fas fa-arrow-up"></i>
+  </div>
+
+  <!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+  <script src="jquery.js"></script>
 
   <script>
+    // Initialize AOS
+    AOS.init();
+
+    // Initialize Swiper
+    const testimonialSwiper = new Swiper('.testimonialSwiper', {
+      slidesPerView: 1,
+      spaceBetween: 30,
+      loop: true,
+      pagination: {
+        el: '.swiper-pagination',
+        clickable: true,
+      },
+      breakpoints: {
+        768: {
+          slidesPerView: 2,
+        },
+        1024: {
+          slidesPerView: 3,
+        },
+      },
+      autoplay: {
+        delay: 5000,
+        disableOnInteraction: false,
+      },
+    });
+
+    // Sticky Navbar
+    window.addEventListener('scroll', function() {
+      const navbar = document.querySelector('.navbar');
+      if (window.scrollY > 50) {
+        navbar.classList.add('scrolled');
+      } else {
+        navbar.classList.remove('scrolled');
+      }
+
+      // Back to top button
+      const backToTop = document.querySelector('.back-to-top');
+      if (window.scrollY > 300) {
+        backToTop.classList.add('show');
+      } else {
+        backToTop.classList.remove('show');
+      }
+    });
+
+    // Back to top button click
+    document.querySelector('.back-to-top').addEventListener('click', function() {
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+      });
+    });
+
+    // Pricing toggle
+    const pricingToggle = document.getElementById('pricingToggle');
+    const monthlyPrices = document.querySelectorAll('.monthly-price');
+    const annualPrices = document.querySelectorAll('.annual-price');
+    const monthlyBtns = document.querySelectorAll('.monthly-btn');
+    const annualBtns = document.querySelectorAll('.annual-btn');
+
+    pricingToggle.addEventListener('change', function() {
+      if (this.checked) {
+        monthlyPrices.forEach(price => price.style.display = 'none');
+        annualPrices.forEach(price => price.style.display = 'block');
+        monthlyBtns.forEach(btn => btn.style.display = 'none');
+        annualBtns.forEach(btn => btn.style.display = 'block');
+      } else {
+        monthlyPrices.forEach(price => price.style.display = 'block');
+        annualPrices.forEach(price => price.style.display = 'none');
+        monthlyBtns.forEach(btn => btn.style.display = 'block');
+        annualBtns.forEach(btn => btn.style.display = 'none');
+      }
+    });
+
+    // Query parameter handler for the login links
     document.addEventListener('DOMContentLoaded', function () {
-      // Seleciona todos os elementos com a classe 'login_gestaoink'
-      var botoes = document.querySelectorAll('.login_gestaoink');
-
-      // Captura a URL da página atual e seus parâmetros
-      var parametros = window.location.search;
-
-      // Itera sobre cada botão para modificar o href
-      botoes.forEach(function (botao) {
-        // Verifica se o href do botão está definido
-        if (botao.href) {
-          // Verifica se já existem parâmetros no link do botão
-          var linkAtual = botao.href;
-          if (linkAtual.indexOf('?') === -1) {
-            // Se não houver parâmetros, adiciona os da página
-            botao.href = linkAtual + parametros;
-          } else {
-            // Se já houver parâmetros, concatena com os existentes
-            botao.href = linkAtual + '&' + parametros.substring(1);
-          }
+      // Capture URL parameters
+      const urlParams = new URLSearchParams(window.location.search);
+      
+      // Get all links with login_gestaoink class
+      const loginLinks = document.querySelectorAll('a[href*="gestaoink.tech/dashboard/logingestaoink"]');
+      
+      // Update each link
+      loginLinks.forEach(function(link) {
+        const originalHref = link.href;
+        
+        // Check if URL already has parameters
+        const hasParams = originalHref.includes('?');
+        const separator = hasParams ? '&' : '?';
+        
+        // Add URL parameters from current page
+        if (urlParams.toString()) {
+          link.href = originalHref + separator + urlParams.toString();
         }
       });
     });
   </script>
-
-
 </body>
-
 </html>
