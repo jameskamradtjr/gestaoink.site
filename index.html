@@ -1302,24 +1302,40 @@
 
     // Query parameter handler for the login links
     document.addEventListener('DOMContentLoaded', function () {
-      // Capture URL parameters
-      const urlParams = new URLSearchParams(window.location.search);
-      
-      // Get all links with login_gestaoink class
+      // Get all links pointing to the login page
       const loginLinks = document.querySelectorAll('a[href*="gestaoink.tech/dashboard/logingestaoink"]');
       
-      // Update each link
-      loginLinks.forEach(function(link) {
-        const originalHref = link.href;
+      // Function to handle click events
+      function handleLinkClick(e) {
+        // Get current UTM parameters
+        const url = new URL(window.location.href);
+        const params = url.searchParams;
         
-        // Check if URL already has parameters
-        const hasParams = originalHref.includes('?');
-        const separator = hasParams ? '&' : '?';
-        
-        // Add URL parameters from current page
-        if (urlParams.toString()) {
-          link.href = originalHref + separator + urlParams.toString();
+        // Extract only UTM parameters
+        const utmParams = new URLSearchParams();
+        for (const [key, value] of params.entries()) {
+          if (key.startsWith('utm_')) {
+            utmParams.append(key, value);
+          }
         }
+        
+        if (utmParams.toString()) {
+          // Get the original link destination
+          const destination = new URL(this.href);
+          
+          // Add UTM parameters to the destination
+          for (const [key, value] of utmParams.entries()) {
+            destination.searchParams.set(key, value);
+          }
+          
+          // Update the href attribute
+          this.href = destination.toString();
+        }
+      }
+      
+      // Add click event listeners to all login links
+      loginLinks.forEach(function(link) {
+        link.addEventListener('click', handleLinkClick);
       });
     });
   </script>
