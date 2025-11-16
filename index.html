@@ -561,6 +561,368 @@
     </div>
   </section>
 
+  <!-- Trail Section -->
+  <section class="section" id="trilha" style="background-color: #0a0a0a;">
+    <div class="container">
+      <div class="text-center mb-5" data-aos="fade-up">
+        <span class="badge bg-primary mb-3 px-3 py-2">Jornada Visual</span>
+        <h2 class="fw-bold mb-3">Visualize o Fluxo Completo do Sistema</h2>
+        <p class="lead">Explore como cada funcionalidade funciona do início ao fim</p>
+      </div>
+      
+      <div class="trail-selector">
+        <button class="trail-btn selected" data-trail="orcamentos">
+          <span class="trail-icon">📋</span>
+          <span>Orçamentos</span>
+        </button>
+        <button class="trail-btn" data-trail="agenda">
+          <span class="trail-icon">📅</span>
+          <span>Agenda</span>
+        </button>
+        <button class="trail-btn" data-trail="automacoes">
+          <span class="trail-icon">🤖</span>
+          <span>Automações</span>
+        </button>
+        <button class="trail-btn" data-trail="crm-vendas">
+          <span class="trail-icon">💼</span>
+          <span>CRM</span>
+        </button>
+        <button class="trail-btn" data-trail="financeiro">
+          <span class="trail-icon">💰</span>
+          <span>Financeiro</span>
+        </button>
+        <button class="trail-btn" data-trail="whatsapp">
+          <span class="trail-icon">💬</span>
+          <span>WhatsApp</span>
+        </button>
+      </div>
+      
+      <div class="trail-flow" id="trailFlowInk">
+        <!-- Cards serão inseridos aqui via JavaScript -->
+      </div>
+      
+      <!-- Modal -->
+      <div class="trail-modal" id="trailModalInk">
+        <div class="trail-modal-content">
+          <span class="trail-modal-close">&times;</span>
+          <div class="trail-modal-icon" id="trailModalIconInk"></div>
+          <h2 id="trailModalTitleInk"></h2>
+          <p id="trailModalDescriptionInk"></p>
+          <div class="trail-modal-requirements" id="trailModalRequirementsInk"></div>
+          <a href="https://gestaoink.tech/dashboard/logingestaoink" class="trail-modal-btn">Começar Agora</a>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <!-- Trail Section Styles -->
+  <style>
+    .trail-selector {
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+      margin-bottom: 60px;
+      flex-wrap: wrap;
+      margin-top: 3rem;
+    }
+    
+    .trail-btn {
+      background: rgba(255, 114, 94, 0.1);
+      border: 2px solid transparent;
+      border-radius: 12px;
+      padding: 12px 20px;
+      color: #fff;
+      font-size: 0.95rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      min-width: 140px;
+      justify-content: center;
+    }
+    
+    .trail-btn:hover {
+      background: rgba(255, 114, 94, 0.2);
+      transform: translateY(-3px);
+      box-shadow: 0 10px 20px rgba(255, 114, 94, 0.3);
+    }
+    
+    .trail-btn.selected {
+      background: var(--primary);
+      color: white;
+      border-color: var(--primary);
+      box-shadow: 0 10px 40px rgba(255, 114, 94, 0.4);
+    }
+    
+    .trail-icon {
+      font-size: 1.3rem;
+    }
+    
+    .trail-flow {
+      position: relative;
+      padding: 40px 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 80px;
+      align-items: center;
+    }
+    
+    .trail-section-title {
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: var(--primary);
+      text-align: center;
+      margin: 40px 0 30px;
+      position: relative;
+      padding-bottom: 15px;
+    }
+    
+    .trail-section-title::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 80px;
+      height: 3px;
+      background: linear-gradient(90deg, transparent, var(--primary), transparent);
+      border-radius: 2px;
+    }
+    
+    .trail-row {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 60px;
+      position: relative;
+      flex-wrap: wrap;
+    }
+    
+    .trail-card {
+      background: #1e1e1e;
+      border: 2px solid rgba(255, 114, 94, 0.2);
+      border-radius: 20px;
+      padding: 30px;
+      width: 200px;
+      min-height: 200px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+    }
+    
+    .trail-card:hover {
+      transform: translateY(-10px) scale(1.05);
+      box-shadow: 0 15px 40px rgba(255, 114, 94, 0.4);
+      border-color: var(--primary);
+      background: linear-gradient(135deg, rgba(255, 114, 94, 0.1) 0%, #1e1e1e 100%);
+    }
+    
+    .trail-card-icon {
+      font-size: 3.5rem;
+      margin-bottom: 15px;
+      filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.3));
+    }
+    
+    .trail-card-title {
+      font-size: 1rem;
+      font-weight: 600;
+      margin-bottom: 8px;
+      line-height: 1.4;
+      color: #fff;
+    }
+    
+    .trail-connection-line {
+      position: absolute;
+      background: linear-gradient(90deg, var(--primary) 0%, var(--primary-hover) 100%);
+      height: 3px;
+      border-radius: 2px;
+      z-index: -1;
+      box-shadow: 0 0 10px rgba(255, 114, 94, 0.5);
+    }
+    
+    .trail-connection-line.vertical {
+      width: 3px;
+      height: 60px;
+      background: linear-gradient(180deg, var(--primary) 0%, var(--primary-hover) 100%);
+      left: 50%;
+      transform: translateX(-50%);
+    }
+    
+    /* Modal */
+    .trail-modal {
+      display: none;
+      position: fixed;
+      z-index: 10000;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.9);
+      backdrop-filter: blur(5px);
+      animation: fadeIn 0.3s ease;
+    }
+    
+    .trail-modal.active {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    
+    .trail-modal-content {
+      background: #1e1e1e;
+      border: 2px solid var(--primary);
+      border-radius: 24px;
+      padding: 40px;
+      max-width: 600px;
+      width: 90%;
+      position: relative;
+      animation: slideUp 0.3s ease;
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+    }
+    
+    @keyframes slideUp {
+      from {
+        transform: translateY(50px);
+        opacity: 0;
+      }
+      to {
+        transform: translateY(0);
+        opacity: 1;
+      }
+    }
+    
+    .trail-modal-close {
+      position: absolute;
+      top: 20px;
+      right: 25px;
+      font-size: 2rem;
+      cursor: pointer;
+      color: #999;
+      transition: color 0.3s ease;
+    }
+    
+    .trail-modal-close:hover {
+      color: #fff;
+    }
+    
+    .trail-modal-icon {
+      font-size: 4rem;
+      text-align: center;
+      margin-bottom: 20px;
+    }
+    
+    .trail-modal-content h2 {
+      text-align: center;
+      margin-bottom: 20px;
+      font-size: 1.8rem;
+      color: var(--primary);
+    }
+    
+    .trail-modal-content p {
+      text-align: center;
+      color: #e0e0e0;
+      line-height: 1.6;
+      margin-bottom: 25px;
+      font-size: 1rem;
+    }
+    
+    .trail-modal-requirements {
+      background: rgba(255, 114, 94, 0.1);
+      border: 1px solid rgba(255, 114, 94, 0.3);
+      border-radius: 12px;
+      padding: 20px;
+      margin-bottom: 25px;
+    }
+    
+    .trail-modal-requirements h3 {
+      font-size: 1.1rem;
+      margin-bottom: 12px;
+      color: var(--primary);
+    }
+    
+    .trail-modal-requirements ul {
+      list-style: none;
+      padding: 0;
+    }
+    
+    .trail-modal-requirements li {
+      padding: 8px 0;
+      color: #e0e0e0;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    
+    .trail-modal-requirements li:before {
+      content: "✓";
+      color: var(--primary);
+      font-weight: bold;
+      font-size: 1.2rem;
+    }
+    
+    .trail-modal-btn {
+      width: 100%;
+      padding: 15px;
+      background: var(--primary);
+      border: none;
+      border-radius: 12px;
+      color: white;
+      font-size: 1.1rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      box-shadow: 0 8px 20px rgba(255, 114, 94, 0.4);
+      text-decoration: none;
+      display: block;
+      text-align: center;
+    }
+    
+    .trail-modal-btn:hover {
+      background: var(--primary-hover);
+      transform: translateY(-2px);
+      box-shadow: 0 12px 30px rgba(255, 114, 94, 0.5);
+      color: white;
+    }
+    
+    @media (max-width: 768px) {
+      .trail-selector {
+        gap: 10px;
+      }
+      
+      .trail-btn {
+        min-width: 120px;
+        padding: 10px 15px;
+        font-size: 0.85rem;
+      }
+      
+      .trail-icon {
+        font-size: 1.1rem;
+      }
+      
+      .trail-row {
+        flex-direction: column;
+        gap: 80px;
+      }
+      
+      .trail-card {
+        width: 100%;
+        max-width: 280px;
+      }
+      
+      .trail-connection-line {
+        display: none;
+      }
+    }
+  </style>
+
   <!-- Stats Section -->
   <section class="section pb-0">
     <div class="container">
@@ -1407,7 +1769,374 @@
       loginLinks.forEach(function(link) {
         link.addEventListener('click', handleLinkClick);
       });
+      
+      // Trail System GestãoInk
+      initializeTrailSystemInk();
     });
+    
+    // Trail System Functions
+    function initializeTrailSystemInk() {
+      const commonCards = [
+        {
+          id: 'common-1',
+          icon: '👤',
+          title: 'Cadastrar Profissionais',
+          description: 'Cadastre tatuadores, piercers e demais profissionais do estúdio.',
+          requirements: ['Dados pessoais', 'Documentos', 'Especialidades', 'Portfólio']
+        },
+        {
+          id: 'common-2',
+          icon: '🏷️',
+          title: 'Cadastrar Categorias',
+          description: 'Organize serviços e produtos por categorias.',
+          requirements: ['Nome da categoria', 'Descrição', 'Tipo (serviço/produto)']
+        },
+        {
+          id: 'common-3',
+          icon: '✨',
+          title: 'Cadastrar Serviços',
+          description: 'Cadastre todos os serviços oferecidos pelo estúdio.',
+          requirements: ['Nome do serviço', 'Valor', 'Duração', 'Profissionais habilitados']
+        },
+        {
+          id: 'common-4',
+          icon: '🎨',
+          title: 'Logo do Estúdio',
+          description: 'Configure a identidade visual do seu estúdio.',
+          requirements: ['Logo em alta resolução', 'Cores da marca', 'Personalização visual']
+        },
+        {
+          id: 'common-5',
+          icon: '💳',
+          title: 'Máquinas de Cartão',
+          description: 'Integre suas maquininhas para controle financeiro.',
+          requirements: ['Dados da operadora', 'Taxa de transação', 'Prazo de recebimento']
+        }
+      ];
+      
+      const specificCards = {
+        'orcamentos': [
+          {
+            id: 'orc-1',
+            icon: '📝',
+            title: 'Formulário Online',
+            description: 'Capture orçamentos 24h com formulário personalizado.',
+            requirements: ['Link personalizado', 'Upload de referências', 'Campos customizáveis', 'Notificação instantânea']
+          },
+          {
+            id: 'orc-2',
+            icon: '📊',
+            title: 'Kanban de Orçamentos',
+            description: 'Gerencie orçamentos visualmente no quadro kanban.',
+            requirements: ['Orçamentos cadastrados', 'Etapas personalizadas', 'Drag and drop', 'Filtros avançados']
+          },
+          {
+            id: 'orc-3',
+            icon: '💬',
+            title: 'Integração WhatsApp',
+            description: 'Responda orçamentos direto do WhatsApp integrado.',
+            requirements: ['WhatsApp conectado', 'Orçamento no sistema', 'Templates de resposta', 'Histórico de conversas']
+          },
+          {
+            id: 'orc-4',
+            icon: '✅',
+            title: 'Conversão em Agenda',
+            description: 'Transforme orçamento aprovado em agendamento.',
+            requirements: ['Orçamento aprovado', 'Disponibilidade do profissional', 'Sinal recebido', 'Cliente confirmado']
+          }
+        ],
+        'automacoes': [
+          {
+            id: 'auto-1',
+            icon: '📅',
+            title: 'Automação de Agenda',
+            description: 'Envie lembretes automáticos via WhatsApp.',
+            requirements: ['WhatsApp integrado', 'Agendamentos ativos', 'Tempo de antecedência', 'Template de mensagem']
+          },
+          {
+            id: 'auto-2',
+            icon: '📋',
+            title: 'Automação de Orçamento',
+            description: 'Dispare mensagens automáticas para orçamentos.',
+            requirements: ['Orçamentos cadastrados', 'Gatilhos configurados', 'Mensagens personalizadas', 'Tempo de espera']
+          },
+          {
+            id: 'auto-3',
+            icon: '🩹',
+            title: 'Automação Cicatrização',
+            description: 'Acompanhe cicatrização em 5, 15 e 30 dias.',
+            requirements: ['Agendamento concluído', 'Datas configuradas', 'Mensagens de acompanhamento', 'Coleta de fotos']
+          },
+          {
+            id: 'auto-4',
+            icon: '⭐',
+            title: 'Pesquisa Satisfação',
+            description: 'Envie pesquisa automática após o serviço.',
+            requirements: ['Serviço finalizado', 'Formulário de pesquisa', 'Tempo de envio', 'Análise de resultados']
+          }
+        ],
+        'crm-vendas': [
+          {
+            id: 'crm-1',
+            icon: '👥',
+            title: 'Cadastro de Clientes',
+            description: 'Base completa com histórico e fotos de trabalhos.',
+            requirements: ['Dados pessoais', 'Histórico de serviços', 'Fotos das tatuagens', 'Preferências']
+          },
+          {
+            id: 'crm-2',
+            icon: '💼',
+            title: 'CRM de Vendas',
+            description: 'Funil de vendas para acompanhar conversão.',
+            requirements: ['Cadastro de leads', 'Pipeline de vendas', 'Histórico de interações', 'Métricas de conversão']
+          },
+          {
+            id: 'crm-3',
+            icon: '📖',
+            title: 'Catálogo Digital',
+            description: 'Portfólio online dos artistas do estúdio.',
+            requirements: ['Fotos dos trabalhos', 'Estilos por artista', 'Descrições detalhadas', 'Link compartilhável']
+          },
+          {
+            id: 'crm-4',
+            icon: '📋',
+            title: 'Formulário Anamnese',
+            description: 'Ficha digital com assinatura eletrônica válida.',
+            requirements: ['Perguntas personalizadas', 'Assinatura digital', 'LGPD compliance', 'Armazenamento seguro']
+          },
+          {
+            id: 'crm-5',
+            icon: '🎁',
+            title: 'Programa de Indicação',
+            description: 'Recompense clientes que trazem novos clientes.',
+            requirements: ['Regras de recompensa', 'Rastreamento de indicações', 'Cupons/descontos', 'Relatório de indicações']
+          }
+        ],
+        agenda: [
+          {
+            id: 'agenda-1',
+            icon: '📅',
+            title: 'Agenda Online com PIX',
+            description: 'Agendamento com pagamento de sinal via PIX.',
+            requirements: ['Profissionais cadastrados', 'Horários disponíveis', 'Integração PIX', 'Link de agendamento']
+          },
+          {
+            id: 'agenda-2',
+            icon: '💵',
+            title: 'Controle de Sinal',
+            description: 'Gerencie sinais pagos e a receber.',
+            requirements: ['Agendamentos ativos', 'Valor do sinal', 'Confirmação de pagamento', 'Integração financeiro']
+          },
+          {
+            id: 'agenda-3',
+            icon: '🧾',
+            title: 'Comanda (FUNDAMENTAL)',
+            description: 'Registre todos os serviços e produtos da sessão.',
+            requirements: ['Serviços cadastrados', 'Estoque de produtos', 'Comissões configuradas', 'Formas de pagamento']
+          },
+          {
+            id: 'agenda-4',
+            icon: '💰',
+            title: 'Comissões Automáticas',
+            description: 'Calcule e gere recibos de comissões.',
+            requirements: ['Comanda finalizada', 'Percentuais por profissional', 'Tipo de comissão', 'Recibo automático']
+          },
+          {
+            id: 'agenda-5',
+            icon: '🔔',
+            title: 'Lembretes Automáticos',
+            description: 'Envie lembretes via WhatsApp automaticamente.',
+            requirements: ['WhatsApp conectado', 'Agendamento confirmado', 'Tempo de antecedência', 'Template configurado']
+          }
+        ],
+        financeiro: [
+          {
+            id: 'fin-1',
+            icon: '💵',
+            title: 'Controle Financeiro',
+            description: 'Gestão completa de entradas, saídas e fluxo de caixa.',
+            requirements: ['Contas a pagar/receber', 'Fluxo de caixa', 'Categorias de despesas', 'Conciliação bancária']
+          },
+          {
+            id: 'fin-2',
+            icon: '💳',
+            title: 'Cálculo de Comissões',
+            description: 'Sistema automático de comissões e repasses.',
+            requirements: ['Comandas finalizadas', 'Percentuais configurados', 'Tipos de comissão', 'Período de apuração']
+          },
+          {
+            id: 'fin-3',
+            icon: '📄',
+            title: 'Nota Fiscal (NFS-e)',
+            description: 'Emita notas fiscais direto do sistema.',
+            requirements: ['Dados fiscais', 'Certificado digital', 'Integração prefeitura', 'Configuração de impostos']
+          },
+          {
+            id: 'fin-4',
+            icon: '📦',
+            title: 'Controle de Estoque',
+            description: 'Gerencie suprimentos e produtos de venda.',
+            requirements: ['Produtos cadastrados', 'Entrada/saída', 'Estoque mínimo', 'Alertas automáticos']
+          },
+          {
+            id: 'fin-5',
+            icon: '📊',
+            title: 'Relatórios e Dashboards',
+            description: 'Visualize métricas e tome decisões baseadas em dados.',
+            requirements: ['Dados financeiros', 'Vendas registradas', 'Período de análise', 'KPIs configurados']
+          }
+        ],
+        whatsapp: [
+          {
+            id: 'whats-1',
+            icon: '🔗',
+            title: 'Integração WhatsApp',
+            description: 'Conecte WhatsApp ao GestãoInk para automatizar.',
+            requirements: ['Número WhatsApp Business', 'QR Code para conectar', 'API configurada', 'Templates aprovados']
+          },
+          {
+            id: 'whats-2',
+            icon: '🤖',
+            title: 'Multichat com IA',
+            description: 'IA atende, agenda e cadastra orçamentos automaticamente.',
+            requirements: ['WhatsApp conectado', 'IA treinada', 'Múltiplos atendentes', 'Contexto do estúdio']
+          },
+          {
+            id: 'whats-3',
+            icon: '📢',
+            title: 'Envio em Massa',
+            description: 'Dispare campanhas para sua base de clientes.',
+            requirements: ['Lista de contatos', 'Segmentação de público', 'Mensagem personalizada', 'API ativa']
+          },
+          {
+            id: 'whats-4',
+            icon: '🩹',
+            title: 'Acompanhamento Cicatrização',
+            description: 'Monitore automaticamente em 5, 15 e 30 dias.',
+            requirements: ['Agendamento concluído', 'WhatsApp integrado', 'Coleta de fotos', 'Mensagens configuradas']
+          },
+          {
+            id: 'whats-5',
+            icon: '💬',
+            title: 'Histórico de Conversas',
+            description: 'Todas as conversas ficam registradas no sistema.',
+            requirements: ['WhatsApp conectado', 'Clientes cadastrados', 'Orçamentos vinculados', 'Agendamentos vinculados']
+          }
+        ]
+      };
+      
+      let currentTrail = 'orcamentos';
+      const modal = document.getElementById('trailModalInk');
+      const trailFlow = document.getElementById('trailFlowInk');
+      
+      function renderTrail(trailKey) {
+        trailFlow.innerHTML = '';
+        
+        trailFlow.innerHTML += '<h3 class="trail-section-title">Cadastros Base (Iniciais)</h3>';
+        renderCards(commonCards, trailFlow);
+        
+        if (specificCards[trailKey] && specificCards[trailKey].length > 0) {
+          trailFlow.innerHTML += '<h3 class="trail-section-title">Funcionalidades Específicas</h3>';
+          renderCards(specificCards[trailKey], trailFlow);
+        }
+      }
+      
+      function renderCards(cards, container) {
+        const cardsPerRow = 3;
+        const rows = Math.ceil(cards.length / cardsPerRow);
+        
+        for (let i = 0; i < rows; i++) {
+          const rowDiv = document.createElement('div');
+          rowDiv.className = 'trail-row';
+          
+          const startIdx = i * cardsPerRow;
+          const endIdx = Math.min(startIdx + cardsPerRow, cards.length);
+          const rowCards = cards.slice(startIdx, endIdx);
+          
+          rowCards.forEach((card, idx) => {
+            const cardEl = createCard(card);
+            rowDiv.appendChild(cardEl);
+            
+            if (idx < rowCards.length - 1) {
+              const line = document.createElement('div');
+              line.className = 'trail-connection-line';
+              line.style.width = '40px';
+              rowDiv.appendChild(line);
+            }
+          });
+          
+          container.appendChild(rowDiv);
+          
+          if (i < rows - 1) {
+            const verticalLine = document.createElement('div');
+            verticalLine.className = 'trail-connection-line vertical';
+            container.appendChild(verticalLine);
+          }
+        }
+      }
+      
+      function createCard(cardData) {
+        const card = document.createElement('div');
+        card.className = 'trail-card';
+        
+        card.innerHTML = `
+          <div class="trail-card-icon">${cardData.icon}</div>
+          <div class="trail-card-title">${cardData.title}</div>
+        `;
+        
+        card.addEventListener('click', () => openModal(cardData));
+        
+        return card;
+      }
+      
+      function openModal(cardData) {
+        document.getElementById('trailModalIconInk').textContent = cardData.icon;
+        document.getElementById('trailModalTitleInk').textContent = cardData.title;
+        document.getElementById('trailModalDescriptionInk').textContent = cardData.description;
+        
+        const reqDiv = document.getElementById('trailModalRequirementsInk');
+        reqDiv.innerHTML = `
+          <h3>Requisitos:</h3>
+          <ul>
+            ${cardData.requirements.map(req => `<li>${req}</li>`).join('')}
+          </ul>
+        `;
+        
+        modal.classList.add('active');
+      }
+      
+      // Setup trail buttons
+      const buttons = document.querySelectorAll('.trail-btn');
+      buttons.forEach(btn => {
+        btn.addEventListener('click', () => {
+          buttons.forEach(b => b.classList.remove('selected'));
+          btn.classList.add('selected');
+          currentTrail = btn.dataset.trail;
+          renderTrail(currentTrail);
+        });
+      });
+      
+      // Setup modal close
+      const closeBtn = document.querySelector('.trail-modal-close');
+      closeBtn.addEventListener('click', () => {
+        modal.classList.remove('active');
+      });
+      
+      window.addEventListener('click', (e) => {
+        if (e.target === modal) {
+          modal.classList.remove('active');
+        }
+      });
+      
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && modal.classList.contains('active')) {
+          modal.classList.remove('active');
+        }
+      });
+      
+      // Initialize with first trail
+      renderTrail(currentTrail);
+    }
   </script>
 </body>
 </html>
