@@ -465,6 +465,60 @@
       box-shadow: none !important;
       filter: none !important;
     }
+
+    /* Black Friday Badge */
+    .bf-badge {
+      display: inline-block;
+      background: linear-gradient(135deg, #ff6b6b 0%, #ee5a6f 50%, #ff6b6b 100%);
+      color: #fff;
+      font-size: 0.65rem;
+      font-weight: 700;
+      padding: 3px 8px;
+      border-radius: 4px;
+      margin-left: 6px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      animation: pulse-glow 2s ease-in-out infinite;
+      box-shadow: 0 0 10px rgba(255, 107, 107, 0.5), 0 0 20px rgba(255, 107, 107, 0.3);
+      position: relative;
+    }
+
+    @keyframes pulse-glow {
+      0%, 100% {
+        transform: scale(1);
+        box-shadow: 0 0 10px rgba(255, 107, 107, 0.5), 0 0 20px rgba(255, 107, 107, 0.3);
+      }
+      50% {
+        transform: scale(1.05);
+        box-shadow: 0 0 20px rgba(255, 107, 107, 0.8), 0 0 30px rgba(255, 107, 107, 0.6), 0 0 40px rgba(255, 107, 107, 0.4);
+      }
+    }
+
+    .bf-badge::before {
+      content: '';
+      position: absolute;
+      top: -2px;
+      left: -2px;
+      right: -2px;
+      bottom: -2px;
+      background: linear-gradient(45deg, #ff6b6b, #ee5a6f, #ff6b6b, #ee5a6f);
+      border-radius: 4px;
+      z-index: -1;
+      opacity: 0.7;
+      animation: rotate-border 3s linear infinite;
+    }
+
+    @keyframes rotate-border {
+      0% {
+        background-position: 0% 50%;
+      }
+      50% {
+        background-position: 100% 50%;
+      }
+      100% {
+        background-position: 0% 50%;
+      }
+    }
   </style>
 
   <script type="application/ld+json">{
@@ -508,7 +562,7 @@
             <a class="nav-link" href="#casos">Cases</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#planos">Planos</a>
+            <a class="nav-link" href="#planos">Planos <span class="bf-badge">BLACK FRIDAY</span></a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="https://blog.gestaoink.site">Blog</a>
@@ -1474,10 +1528,10 @@
         <div class="d-flex justify-content-center align-items-center mt-4">
           <span class="me-3 fw-bold">Mensal</span>
           <div class="form-check form-switch d-inline-block">
-            <input class="form-check-input" type="checkbox" id="pricingToggle" style="width: 60px; height: 30px;">
+            <input class="form-check-input" type="checkbox" id="pricingToggle" checked style="width: 60px; height: 30px;">
             <label class="form-check-label" for="pricingToggle"></label>
           </div>
-          <span class="ms-3 fw-bold">Anual <span class="badge bg-primary">Economize ++ 30%</span></span>
+          <span class="ms-3 fw-bold">Anual <span class="badge bg-primary">Economize 60%</span></span>
         </div>
       </div>
 
@@ -1487,13 +1541,13 @@
           <div class="pricing-card">
             <span class="badge bg-danger position-absolute" style="top: -10px; left: 20px; transform: rotate(-15deg);">30% OFF</span>
             <h4 class="fw-bold">AUTÔNOMO</h4>
-            <div class="price monthly-price">
+            <div class="price monthly-price" style="display: none;">
               <span style="text-decoration: line-through; color: #999; font-size: 28px;">R$149</span>
               <span style="display: block;">R$104<small>/mês</small></span>
             </div>
-            <div class="price annual-price" style="display: none;">
+            <div class="price annual-price">
               <span style="text-decoration: line-through; color: #999; font-size: 28px;">R$1.299</span>
-              <span style="display: block;">R$909<small>/ano</small></span>
+              <span style="display: block;">R$519,60<small>/ano</small></span>
             </div>
             <p class="text-muted mb-4">Perfeito para tatuadores independentes</p>
             <ul class="list-unstyled text-start mb-4">
@@ -1503,8 +1557,8 @@
               <li class="mb-3"><i class="fas fa-check text-primary me-2"></i> Suporte por e-mail</li>
               <li class="mb-3"><i class="fas fa-check text-primary me-2"></i> Acesso em múltiplos dispositivos</li>
             </ul>
-            <a href="https://pay.kiwify.com.br/ZTDJoCg?coupon=GINK2530" class="btn btn-outline w-100 monthly-btn">Assinar Plano Mensal</a>
-            <a href="https://pay.kiwify.com.br/lYGV9TK?coupon=GINK2530" class="btn btn-outline w-100 annual-btn" style="display: none;">Assinar Plano Anual</a>
+            <a href="https://pay.kiwify.com.br/ZTDJoCg?coupon=GINK2530" class="btn btn-outline w-100 monthly-btn" style="display: none;">Assinar Plano Mensal</a>
+            <a href="https://pay.kiwify.com.br/lYGV9TK?coupon=BLACKINK60" class="btn btn-outline w-100 annual-btn">Assinar Plano Anual</a>
           </div>
         </div>
 
@@ -1514,13 +1568,13 @@
             <span class="badge bg-primary position-absolute" style="top: -10px; right: 20px;">MAIS POPULAR</span>
             <span class="badge bg-danger position-absolute" style="top: -10px; left: 20px; transform: rotate(-15deg);">30% OFF</span>
             <h4 class="fw-bold">TATTOO STUDIO BASIC</h4>
-            <div class="price monthly-price">
+            <div class="price monthly-price" style="display: none;">
               <span style="text-decoration: line-through; color: #999; font-size: 28px;">R$199</span>
               <span style="display: block;">R$139<small>/mês</small></span>
             </div>
-            <div class="price annual-price" style="display: none;">
+            <div class="price annual-price">
               <span style="text-decoration: line-through; color: #999; font-size: 28px;">R$1.499</span>
-              <span style="display: block;">R$1.049<small>/ano</small></span>
+              <span style="display: block;">R$599,60<small>/ano</small></span>
             </div>
             <p class="text-muted mb-4">Ideal para estúdios de pequeno a médio porte</p>
             <ul class="list-unstyled text-start mb-4">
@@ -1530,8 +1584,8 @@
               <li class="mb-3"><i class="fas fa-check text-primary me-2"></i> Suporte por e-mail prioritário</li>
               <li class="mb-3"><i class="fas fa-check text-primary me-2"></i> Acesso em múltiplos dispositivos</li>
             </ul>
-            <a href="https://pay.kiwify.com.br/BE6pceM?coupon=GINK2530" class="btn btn-primary w-100 monthly-btn">Assinar Plano Mensal</a>
-            <a href="https://pay.kiwify.com.br/1NfkNVB?coupon=GINK2530" class="btn btn-primary w-100 annual-btn" style="display: none;">Assinar Plano Anual</a>
+            <a href="https://pay.kiwify.com.br/BE6pceM?coupon=GINK2530" class="btn btn-primary w-100 monthly-btn" style="display: none;">Assinar Plano Mensal</a>
+            <a href="https://pay.kiwify.com.br/1NfkNVB?coupon=BLACKINK60" class="btn btn-primary w-100 annual-btn">Assinar Plano Anual</a>
           </div>
         </div>
 
@@ -1540,13 +1594,13 @@
           <div class="pricing-card">
             <span class="badge bg-danger position-absolute" style="top: -10px; left: 20px; transform: rotate(-15deg);">30% OFF</span>
             <h4 class="fw-bold">TATTOO STUDIO PRO</h4>
-            <div class="price monthly-price">
+            <div class="price monthly-price" style="display: none;">
               <span style="text-decoration: line-through; color: #999; font-size: 28px;">R$299</span>
               <span style="display: block;">R$209<small>/mês</small></span>
             </div>
-            <div class="price annual-price" style="display: none;">
+            <div class="price annual-price">
               <span style="text-decoration: line-through; color: #999; font-size: 28px;">R$2.499</span>
-              <span style="display: block;">R$1.749<small>/ano</small></span>
+              <span style="display: block;">R$999,60<small>/ano</small></span>
             </div>
             <p class="text-muted mb-4">Para estúdios de médio a grande porte</p>
             <ul class="list-unstyled text-start mb-4">
@@ -1557,8 +1611,32 @@
               <li class="mb-3"><i class="fas fa-check text-primary me-2"></i> Acesso em múltiplos dispositivos</li>
               <li class="mb-3"><i class="fas fa-check text-primary me-2"></i> Treinamento personalizado</li>
             </ul>
-            <a href="https://pay.kiwify.com.br/TiuLiek?coupon=GINK2530" class="btn btn-outline w-100 monthly-btn">Assinar Plano Mensal</a>
-            <a href="https://pay.kiwify.com.br/zYam7iC?coupon=GINK2530" class="btn btn-outline w-100 annual-btn" style="display: none;">Assinar Plano Anual</a>
+            <a href="https://pay.kiwify.com.br/TiuLiek?coupon=GINK2530" class="btn btn-outline w-100 monthly-btn" style="display: none;">Assinar Plano Mensal</a>
+            <a href="https://pay.kiwify.com.br/zYam7iC?coupon=BLACKINK60" class="btn btn-outline w-100 annual-btn">Assinar Plano Anual</a>
+          </div>
+        </div>
+
+        <!-- Pricing Plan 4 - Vitalício -->
+        <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="400">
+          <div class="pricing-card featured">
+            <span class="badge bg-primary position-absolute" style="top: -10px; right: 20px;">VITALÍCIO</span>
+            <span class="badge bg-danger position-absolute" style="top: -10px; left: 20px; transform: rotate(-15deg);">51% OFF</span>
+            <h4 class="fw-bold">PLANO VITALÍCIO</h4>
+            <div class="price">
+              <span style="text-decoration: line-through; color: #999; font-size: 28px;">R$5.000</span>
+              <span style="display: block;">R$2.430<small> único</small></span>
+            </div>
+            <p class="text-muted mb-4">Acesso permanente a todas as funcionalidades</p>
+            <ul class="list-unstyled text-start mb-4">
+              <li class="mb-3"><i class="fas fa-check text-primary me-2"></i> Profissionais ilimitados</li>
+              <li class="mb-3"><i class="fas fa-check text-primary me-2"></i> Armazenamento ilimitado</li>
+              <li class="mb-3"><i class="fas fa-check text-primary me-2"></i> Acesso a todas as funcionalidades</li>
+              <li class="mb-3"><i class="fas fa-check text-primary me-2"></i> Suporte por WhatsApp</li>
+              <li class="mb-3"><i class="fas fa-check text-primary me-2"></i> Todas as atualizações</li>
+              <li class="mb-3"><i class="fas fa-check text-primary me-2"></i> Sem mensalidade</li>
+              <li class="mb-3"><i class="fas fa-check text-primary me-2"></i> Para sempre</li>
+            </ul>
+            <a href="https://pay.kiwify.com.br/PgLTvku" class="btn btn-primary w-100">Assinar Plano Vitalício</a>
           </div>
         </div>
       </div>
@@ -1717,19 +1795,39 @@
     const annualPrices = document.querySelectorAll('.annual-price');
     const monthlyBtns = document.querySelectorAll('.monthly-btn');
     const annualBtns = document.querySelectorAll('.annual-btn');
+    const discountBadges = document.querySelectorAll('.pricing-card .badge.bg-danger');
 
-    pricingToggle.addEventListener('change', function() {
-      if (this.checked) {
+    function updatePricingDisplay(isAnnual) {
+      if (isAnnual) {
         monthlyPrices.forEach(price => price.style.display = 'none');
         annualPrices.forEach(price => price.style.display = 'block');
         monthlyBtns.forEach(btn => btn.style.display = 'none');
         annualBtns.forEach(btn => btn.style.display = 'block');
+        // Atualizar badges para 60% OFF
+        discountBadges.forEach(badge => {
+          if (badge.textContent.includes('30% OFF')) {
+            badge.textContent = '60% OFF';
+          }
+        });
       } else {
         monthlyPrices.forEach(price => price.style.display = 'block');
         annualPrices.forEach(price => price.style.display = 'none');
         monthlyBtns.forEach(btn => btn.style.display = 'block');
         annualBtns.forEach(btn => btn.style.display = 'none');
+        // Atualizar badges para 30% OFF
+        discountBadges.forEach(badge => {
+          if (badge.textContent.includes('60% OFF')) {
+            badge.textContent = '30% OFF';
+          }
+        });
       }
+    }
+
+    // Inicializar com anual (checked)
+    updatePricingDisplay(true);
+
+    pricingToggle.addEventListener('change', function() {
+      updatePricingDisplay(this.checked);
     });
 
     // Query parameter handler for the login links
