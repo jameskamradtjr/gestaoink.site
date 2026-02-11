@@ -1,13 +1,16 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="author" content="byte0">
-  <meta name="description" content="Gestão completa para estúdios de tatuagem: agenda, financeiro, estoque, orçamentos e automações. A plataforma mais avançada do Brasil.">
-  <meta name="keywords" content="gestão estúdio de tatuagem, sistema para tatuadores, agenda para tatuadores, controle financeiro tatuagem, orçamentos tatuagem, CRM tatuagem">
+  <meta name="description"
+    content="Gestão completa para estúdios de tatuagem: agenda, financeiro, estoque, orçamentos e automações. A plataforma mais avançada do Brasil.">
+  <meta name="keywords"
+    content="gestão estúdio de tatuagem, sistema para tatuadores, agenda para tatuadores, controle financeiro tatuagem, orçamentos tatuagem, CRM tatuagem">
   <title>GestãoInk | Sistema Premium para Estúdios de Tatuagem</title>
-  
+
   <!-- Google Tag Manager -->
   <script>(function (w, d, s, l, i) {
       w[l] = w[l] || []; w[l].push({
@@ -17,20 +20,21 @@
           'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
     })(window, document, 'script', 'dataLayer', 'GTM-KK23FMJ');</script>
   <!-- End Google Tag Manager -->
-  
+
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-  
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap"
+    rel="stylesheet">
+
   <!-- Favicon -->
   <link rel="icon" href="images/favicon.png">
-  
+
   <!-- CSS -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css">
-  
+
   <style>
     :root {
       --primary: #ff725e;
@@ -40,13 +44,13 @@
       --light: #f8f9fa;
       --gray: #6c757d;
     }
-    
+
     * {
       margin: 0;
       padding: 0;
       box-sizing: border-box;
     }
-    
+
     body {
       font-family: 'Montserrat', sans-serif;
       background-color: #121212;
@@ -55,12 +59,12 @@
       width: 100%;
       position: relative;
     }
-    
+
     html {
       overflow-x: hidden;
       max-width: 100vw;
     }
-    
+
     .btn-primary {
       background-color: var(--primary);
       border-color: var(--primary);
@@ -69,14 +73,14 @@
       font-weight: 600;
       transition: all 0.3s ease;
     }
-    
+
     .btn-primary:hover {
       background-color: var(--primary-hover);
       border-color: var(--primary-hover);
       transform: translateY(-3px);
       box-shadow: 0 10px 20px rgba(255, 114, 94, 0.3);
     }
-    
+
     .btn-outline {
       background-color: transparent;
       border: 2px solid var(--primary);
@@ -86,22 +90,27 @@
       font-weight: 600;
       transition: all 0.3s ease;
     }
-    
+
     .btn-outline:hover {
       background-color: var(--primary);
       color: white;
       transform: translateY(-3px);
       box-shadow: 0 10px 20px rgba(255, 114, 94, 0.3);
     }
-    
+
     .section {
       padding: 100px 0;
     }
-    
-    h1, h2, h3, h4, h5, h6 {
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
       font-weight: 700;
     }
-    
+
     .card {
       background-color: #1e1e1e;
       border: none;
@@ -109,23 +118,23 @@
       overflow: hidden;
       transition: all 0.3s ease;
     }
-    
+
     .card:hover {
       transform: translateY(-10px);
       box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
     }
-    
+
     .card p {
       color: #e0e0e0;
     }
-    
+
     .navbar {
       padding: 10px 0;
       transition: all 0.3s ease;
       background-color: rgba(18, 18, 18, 0.95);
       width: 100%;
     }
-    
+
     .navbar .container {
       padding-left: 15px;
       padding-right: 15px;
@@ -135,7 +144,7 @@
       width: 100%;
       max-width: 100%;
     }
-    
+
     @media (min-width: 992px) {
       .navbar .container {
         padding-left: 50px;
@@ -144,35 +153,35 @@
         margin: 0 auto;
         max-width: 1400px;
       }
-      
+
       .navbar-brand {
         padding-left: 15px;
       }
-      
+
       .navbar-nav {
         margin-right: 15px;
       }
-      
+
       .ms-lg-4 {
         margin-left: 20px !important;
       }
     }
-    
+
     .navbar.scrolled {
       padding: 12px 0;
       background-color: rgba(18, 18, 18, 0.98);
       box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
     }
-    
+
     .navbar-brand img {
       height: 40px;
       transition: all 0.3s ease;
     }
-    
+
     .navbar.scrolled .navbar-brand img {
       height: 35px;
     }
-    
+
     .navbar-toggler {
       border: 2px solid var(--primary);
       padding: 4px;
@@ -180,15 +189,15 @@
       position: relative;
       z-index: 1000;
     }
-    
+
     .navbar-toggler:focus {
       box-shadow: 0 0 0 0.25rem rgba(255, 114, 94, 0.5);
     }
-    
+
     .navbar-toggler-icon {
       background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%28255, 114, 94, 1%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
     }
-    
+
     .nav-link {
       color: #fff;
       font-weight: 500;
@@ -196,11 +205,11 @@
       position: relative;
       transition: all 0.3s ease;
     }
-    
+
     .nav-link:hover {
       color: var(--primary);
     }
-    
+
     .nav-link::after {
       content: '';
       position: absolute;
@@ -211,11 +220,11 @@
       background-color: var(--primary);
       transition: width 0.3s ease;
     }
-    
+
     .nav-link:hover::after {
       width: 100%;
     }
-    
+
     .feature-icon {
       width: 80px;
       height: 80px;
@@ -226,13 +235,13 @@
       margin-bottom: 20px;
       background-color: rgba(255, 114, 94, 0.1);
     }
-    
+
     .feature-icon i,
     .feature-icon svg {
       font-size: 36px;
       color: var(--primary);
     }
-    
+
     .hero-section {
       min-height: 100vh;
       display: flex;
@@ -241,7 +250,7 @@
       overflow: hidden;
       padding-top: 120px;
     }
-    
+
     .hero-section::before {
       content: '';
       position: absolute;
@@ -252,32 +261,40 @@
       background: radial-gradient(ellipse at center, rgba(255, 114, 94, 0.2) 0%, rgba(0, 0, 0, 0) 70%);
       z-index: 0;
     }
-    
+
     .hero-img {
       border-radius: 12px;
       overflow: hidden;
       box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
       transition: all 0.5s ease;
     }
-    
+
     .hero-img img {
       transition: all 0.5s ease;
     }
-    
+
     .hero-img:hover img {
       transform: scale(1.05);
     }
-    
+
     .floating {
       animation: floating 3s ease-in-out infinite;
     }
-    
+
     @keyframes floating {
-      0% { transform: translateY(0px); }
-      50% { transform: translateY(-15px); }
-      100% { transform: translateY(0px); }
+      0% {
+        transform: translateY(0px);
+      }
+
+      50% {
+        transform: translateY(-15px);
+      }
+
+      100% {
+        transform: translateY(0px);
+      }
     }
-    
+
     .stats-card {
       padding: 30px;
       border-radius: 12px;
@@ -285,19 +302,19 @@
       text-align: center;
       border-bottom: 3px solid var(--primary);
     }
-    
+
     .stats-card h2 {
       font-size: 48px;
       font-weight: 700;
       color: var(--primary);
       margin-bottom: 10px;
     }
-    
+
     .swiper {
       width: 100%;
       padding: 50px 0;
     }
-    
+
     .swiper-slide {
       background-position: center;
       background-size: cover;
@@ -306,7 +323,7 @@
       border-radius: 12px;
       overflow: hidden;
     }
-    
+
     .testimonial-card {
       background-color: #1e1e1e;
       padding: 30px;
@@ -314,9 +331,10 @@
       margin: 15px;
       position: relative;
     }
-    
+
     .testimonial-card::before {
-      content: "\201C"; /* Using the Unicode escape sequence for opening double quote */
+      content: "\201C";
+      /* Using the Unicode escape sequence for opening double quote */
       position: absolute;
       top: 20px;
       left: 20px;
@@ -324,21 +342,21 @@
       font-weight: 700;
       color: rgba(255, 114, 94, 0.2);
     }
-    
+
     .feature-img-container {
       overflow: hidden;
       border-radius: 12px;
       box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
     }
-    
+
     .feature-img-container img {
       transition: all 0.5s ease;
     }
-    
+
     .feature-img-container:hover img {
       transform: scale(1.05);
     }
-    
+
     .pricing-card {
       padding: 40px;
       border-radius: 12px;
@@ -347,33 +365,33 @@
       transition: all 0.3s ease;
       border: 1px solid #333;
     }
-    
+
     .pricing-card:hover {
       transform: translateY(-15px);
       border-color: var(--primary);
     }
-    
+
     .pricing-card.featured {
       background-color: rgba(255, 114, 94, 0.1);
       border: 2px solid var(--primary);
     }
-    
+
     .pricing-card .price {
       font-size: 48px;
       font-weight: 700;
       color: var(--primary);
       margin: 20px 0;
     }
-    
+
     .pricing-card p.text-muted {
       color: #e0e0e0 !important;
     }
-    
+
     footer {
       background-color: #0a0a0a;
       padding: 80px 0 30px;
     }
-    
+
     .social-links a {
       display: inline-flex;
       align-items: center;
@@ -386,17 +404,17 @@
       color: #fff;
       transition: all 0.3s ease;
     }
-    
+
     .social-links a i {
       color: #fff;
       font-size: 18px;
     }
-    
+
     .social-links a:hover {
       background-color: var(--primary);
       transform: translateY(-5px);
     }
-    
+
     .back-to-top {
       position: fixed;
       bottom: 20px;
@@ -415,52 +433,53 @@
       z-index: 99;
       box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
     }
-    
+
     .back-to-top i {
       font-size: 20px;
       color: white;
     }
-    
+
     .back-to-top.show {
       opacity: 1;
     }
-    
+
     .card h4,
     .card h5 {
       color: var(--primary);
     }
-    
+
     @media (max-width: 767px) {
       .navbar-brand img {
         height: 30px;
       }
-      
+
       .navbar-toggler {
         padding: 3px;
         margin: 0;
       }
-      
+
       .back-to-top {
         bottom: 15px;
         right: 15px;
         width: 35px;
         height: 35px;
       }
-      
+
       .container {
         padding-left: 12px;
         padding-right: 12px;
         width: 100%;
         max-width: 100%;
       }
-      
+
       .navbar .container {
         padding-left: 10px;
         padding-right: 10px;
       }
     }
-    
-    .hero-img, .hero-img img {
+
+    .hero-img,
+    .hero-img img {
       background: transparent !important;
       box-shadow: none !important;
       filter: none !important;
@@ -484,10 +503,13 @@
     }
 
     @keyframes pulse-glow {
-      0%, 100% {
+
+      0%,
+      100% {
         transform: scale(1);
         box-shadow: 0 0 10px rgba(255, 107, 107, 0.5), 0 0 20px rgba(255, 107, 107, 0.3);
       }
+
       50% {
         transform: scale(1.05);
         box-shadow: 0 0 20px rgba(255, 107, 107, 0.8), 0 0 30px rgba(255, 107, 107, 0.6), 0 0 40px rgba(255, 107, 107, 0.4);
@@ -512,9 +534,11 @@
       0% {
         background-position: 0% 50%;
       }
+
       50% {
         background-position: 100% 50%;
       }
+
       100% {
         background-position: 0% 50%;
       }
@@ -538,7 +562,8 @@
 
 <body>
   <!-- Google Tag Manager (noscript) -->
-  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KK23FMJ" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KK23FMJ" height="0" width="0"
+      style="display:none;visibility:hidden"></iframe></noscript>
   <!-- End Google Tag Manager (noscript) -->
 
   <!-- Navigation -->
@@ -547,7 +572,8 @@
       <a class="navbar-brand" href="#">
         <img src="images/logoescrita.png" alt="GestãoInk">
       </a>
-      <button class="navbar-toggler collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <button class="navbar-toggler collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarNav">
@@ -562,7 +588,7 @@
             <a class="nav-link" href="#casos">Cases</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#planos">Planos <span class="bf-badge">BLACK FRIDAY</span></a>
+            <a class="nav-link" href="#planos">Planos <span class="bf-badge">Promoção</span></a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="https://blog.gestaoink.site">Blog</a>
@@ -571,7 +597,8 @@
             <a href="https://gestaoink.tech/dashboard/logingestaoink" class="btn btn-outline my-2 w-100">Login</a>
           </li>
           <li class="nav-item d-lg-none">
-            <a href="https://gestaoink.tech/dashboard/logingestaoink" class="btn btn-primary my-2 w-100">Teste Grátis</a>
+            <a href="https://gestaoink.tech/dashboard/logingestaoink" class="btn btn-primary my-2 w-100">Teste
+              Grátis</a>
           </li>
         </ul>
         <div class="ms-lg-4 d-none d-lg-block">
@@ -588,14 +615,18 @@
       <div class="row align-items-center">
         <div class="col-lg-6" data-aos="fade-right" data-aos-duration="1000">
           <h1 class="display-4 fw-bold mb-4">Transforme a gestão do seu estúdio de tatuagem</h1>
-          <p class="lead mb-4">O sistema mais completo do Brasil, já utilizado por mais de 1000 estúdios. Gerencie agendamentos, orçamentos, estoque, finanças e todo o relacionamento com seus clientes em uma única plataforma.</p>
-          
+          <p class="lead mb-4">O sistema mais completo do Brasil, já utilizado por mais de 1000 estúdios. Gerencie
+            agendamentos, orçamentos, estoque, finanças e todo o relacionamento com seus clientes em uma única
+            plataforma.</p>
+
           <div class="d-flex gap-3 mt-3">
-            <a href="https://gestaoink.tech/dashboard/logingestaoink" class="btn btn-primary">Teste Grátis por 5 dias <i class="fas fa-arrow-right ms-2"></i></a>
+            <a href="https://gestaoink.tech/dashboard/logingestaoink" class="btn btn-primary">Teste Grátis por 5 dias <i
+                class="fas fa-arrow-right ms-2"></i></a>
             <a href="#demo" class="btn btn-outline">Ver demonstração</a>
           </div>
           <div class="mt-3">
-            <span style="font-size:1.15rem;font-weight:500;display:block;">Deixe seu atendimento no automático com nossa IA que atende WhatsApp, faz agendamento e cadastra orçamento.</span>
+            <span style="font-size:1.15rem;font-weight:500;display:block;">Deixe seu atendimento no automático com nossa
+              IA que atende WhatsApp, faz agendamento e cadastra orçamento.</span>
           </div>
           <div class="mt-4 d-flex align-items-center">
             <div class="me-4">
@@ -623,7 +654,7 @@
         <h2 class="fw-bold mb-3">Visualize o Fluxo Completo do Sistema</h2>
         <p class="lead">Explore como cada funcionalidade funciona do início ao fim</p>
       </div>
-      
+
       <div class="trail-selector">
         <button class="trail-btn selected" data-trail="orcamentos">
           <span class="trail-icon">📋</span>
@@ -650,11 +681,11 @@
           <span>WhatsApp</span>
         </button>
       </div>
-      
+
       <div class="trail-flow" id="trailFlowInk">
         <!-- Cards serão inseridos aqui via JavaScript -->
       </div>
-      
+
       <!-- Modal -->
       <div class="trail-modal" id="trailModalInk">
         <div class="trail-modal-content">
@@ -668,7 +699,7 @@
       </div>
     </div>
   </section>
-  
+
   <!-- Trail Section Styles -->
   <style>
     .trail-selector {
@@ -679,7 +710,7 @@
       flex-wrap: wrap;
       margin-top: 3rem;
     }
-    
+
     .trail-btn {
       background: rgba(255, 114, 94, 0.1);
       border: 2px solid transparent;
@@ -696,24 +727,24 @@
       min-width: 140px;
       justify-content: center;
     }
-    
+
     .trail-btn:hover {
       background: rgba(255, 114, 94, 0.2);
       transform: translateY(-3px);
       box-shadow: 0 10px 20px rgba(255, 114, 94, 0.3);
     }
-    
+
     .trail-btn.selected {
       background: var(--primary);
       color: white;
       border-color: var(--primary);
       box-shadow: 0 10px 40px rgba(255, 114, 94, 0.4);
     }
-    
+
     .trail-icon {
       font-size: 1.3rem;
     }
-    
+
     .trail-flow {
       position: relative;
       padding: 40px 20px;
@@ -722,7 +753,7 @@
       gap: 80px;
       align-items: center;
     }
-    
+
     .trail-section-title {
       font-size: 1.5rem;
       font-weight: 700;
@@ -732,7 +763,7 @@
       position: relative;
       padding-bottom: 15px;
     }
-    
+
     .trail-section-title::after {
       content: '';
       position: absolute;
@@ -744,7 +775,7 @@
       background: linear-gradient(90deg, transparent, var(--primary), transparent);
       border-radius: 2px;
     }
-    
+
     .trail-row {
       display: flex;
       justify-content: center;
@@ -753,7 +784,7 @@
       position: relative;
       flex-wrap: wrap;
     }
-    
+
     .trail-card {
       background: #1e1e1e;
       border: 2px solid rgba(255, 114, 94, 0.2);
@@ -771,20 +802,20 @@
       text-align: center;
       box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
     }
-    
+
     .trail-card:hover {
       transform: translateY(-10px) scale(1.05);
       box-shadow: 0 15px 40px rgba(255, 114, 94, 0.4);
       border-color: var(--primary);
       background: linear-gradient(135deg, rgba(255, 114, 94, 0.1) 0%, #1e1e1e 100%);
     }
-    
+
     .trail-card-icon {
       font-size: 3.5rem;
       margin-bottom: 15px;
       filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.3));
     }
-    
+
     .trail-card-title {
       font-size: 1rem;
       font-weight: 600;
@@ -792,7 +823,7 @@
       line-height: 1.4;
       color: #fff;
     }
-    
+
     .trail-connection-line {
       position: absolute;
       background: linear-gradient(90deg, var(--primary) 0%, var(--primary-hover) 100%);
@@ -801,7 +832,7 @@
       z-index: -1;
       box-shadow: 0 0 10px rgba(255, 114, 94, 0.5);
     }
-    
+
     .trail-connection-line.vertical {
       width: 3px;
       height: 60px;
@@ -809,7 +840,7 @@
       left: 50%;
       transform: translateX(-50%);
     }
-    
+
     /* Modal */
     .trail-modal {
       display: none;
@@ -823,13 +854,13 @@
       backdrop-filter: blur(5px);
       animation: fadeIn 0.3s ease;
     }
-    
+
     .trail-modal.active {
       display: flex;
       align-items: center;
       justify-content: center;
     }
-    
+
     .trail-modal-content {
       background: #1e1e1e;
       border: 2px solid var(--primary);
@@ -841,18 +872,19 @@
       animation: slideUp 0.3s ease;
       box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
     }
-    
+
     @keyframes slideUp {
       from {
         transform: translateY(50px);
         opacity: 0;
       }
+
       to {
         transform: translateY(0);
         opacity: 1;
       }
     }
-    
+
     .trail-modal-close {
       position: absolute;
       top: 20px;
@@ -862,24 +894,24 @@
       color: #999;
       transition: color 0.3s ease;
     }
-    
+
     .trail-modal-close:hover {
       color: #fff;
     }
-    
+
     .trail-modal-icon {
       font-size: 4rem;
       text-align: center;
       margin-bottom: 20px;
     }
-    
+
     .trail-modal-content h2 {
       text-align: center;
       margin-bottom: 20px;
       font-size: 1.8rem;
       color: var(--primary);
     }
-    
+
     .trail-modal-content p {
       text-align: center;
       color: #e0e0e0;
@@ -887,7 +919,7 @@
       margin-bottom: 25px;
       font-size: 1rem;
     }
-    
+
     .trail-modal-requirements {
       background: rgba(255, 114, 94, 0.1);
       border: 1px solid rgba(255, 114, 94, 0.3);
@@ -895,18 +927,18 @@
       padding: 20px;
       margin-bottom: 25px;
     }
-    
+
     .trail-modal-requirements h3 {
       font-size: 1.1rem;
       margin-bottom: 12px;
       color: var(--primary);
     }
-    
+
     .trail-modal-requirements ul {
       list-style: none;
       padding: 0;
     }
-    
+
     .trail-modal-requirements li {
       padding: 8px 0;
       color: #e0e0e0;
@@ -914,14 +946,14 @@
       align-items: center;
       gap: 10px;
     }
-    
+
     .trail-modal-requirements li:before {
       content: "✓";
       color: var(--primary);
       font-weight: bold;
       font-size: 1.2rem;
     }
-    
+
     .trail-modal-btn {
       width: 100%;
       padding: 15px;
@@ -938,39 +970,39 @@
       display: block;
       text-align: center;
     }
-    
+
     .trail-modal-btn:hover {
       background: var(--primary-hover);
       transform: translateY(-2px);
       box-shadow: 0 12px 30px rgba(255, 114, 94, 0.5);
       color: white;
     }
-    
+
     @media (max-width: 768px) {
       .trail-selector {
         gap: 10px;
       }
-      
+
       .trail-btn {
         min-width: 120px;
         padding: 10px 15px;
         font-size: 0.85rem;
       }
-      
+
       .trail-icon {
         font-size: 1.1rem;
       }
-      
+
       .trail-row {
         flex-direction: column;
         gap: 80px;
       }
-      
+
       .trail-card {
         width: 100%;
         max-width: 280px;
       }
-      
+
       .trail-connection-line {
         display: none;
       }
@@ -1015,11 +1047,15 @@
       <div class="row align-items-center mb-5">
         <div class="col-lg-6" data-aos="fade-right" data-aos-duration="1000">
           <h3 class="fw-bold mb-4">Orçamentos inteligentes com formulário personalizado</h3>
-          <p class="mb-4">Capture orçamentos 24 horas por dia através de um formulário profissional personalizado para seu estúdio. Todas as solicitações são organizadas por ordem de chegada, com as referências anexadas.</p>
+          <p class="mb-4">Capture orçamentos 24 horas por dia através de um formulário profissional personalizado para
+            seu estúdio. Todas as solicitações são organizadas por ordem de chegada, com as referências anexadas.</p>
           <ul class="list-unstyled">
-            <li class="mb-3"><i class="fas fa-check text-primary me-2"></i> Link personalizável para o formulário de orçamentos</li>
-            <li class="mb-3"><i class="fas fa-check text-primary me-2"></i> Organize as solicitações em um kanban eficiente</li>
-            <li class="mb-3"><i class="fas fa-check text-primary me-2"></i> Integração com WhatsApp para resposta rápida</li>
+            <li class="mb-3"><i class="fas fa-check text-primary me-2"></i> Link personalizável para o formulário de
+              orçamentos</li>
+            <li class="mb-3"><i class="fas fa-check text-primary me-2"></i> Organize as solicitações em um kanban
+              eficiente</li>
+            <li class="mb-3"><i class="fas fa-check text-primary me-2"></i> Integração com WhatsApp para resposta rápida
+            </li>
           </ul>
         </div>
         <div class="col-lg-6" data-aos="fade-left" data-aos-duration="1000" data-aos-delay="200">
@@ -1033,9 +1069,11 @@
       <div class="row align-items-center mb-5 flex-row-reverse">
         <div class="col-lg-6" data-aos="fade-left" data-aos-duration="1000">
           <h3 class="fw-bold mb-4">Agenda completa com controle total</h3>
-          <p class="mb-4">A agenda mais avançada para tatuadores do mercado, com controle de sinais, reserva de materiais, gestão de espaços e muito mais.</p>
+          <p class="mb-4">A agenda mais avançada para tatuadores do mercado, com controle de sinais, reserva de
+            materiais, gestão de espaços e muito mais.</p>
           <ul class="list-unstyled">
-            <li class="mb-3"><i class="fas fa-check text-primary me-2"></i> Controle de sinais e pagamentos parciais</li>
+            <li class="mb-3"><i class="fas fa-check text-primary me-2"></i> Controle de sinais e pagamentos parciais
+            </li>
             <li class="mb-3"><i class="fas fa-check text-primary me-2"></i> Referências anexadas a cada agendamento</li>
             <li class="mb-3"><i class="fas fa-check text-primary me-2"></i> Sincronização com Google Agenda</li>
             <li class="mb-3"><i class="fas fa-check text-primary me-2"></i> Agendamento online para clientes</li>
@@ -1052,12 +1090,16 @@
       <div class="row align-items-center mb-5">
         <div class="col-lg-6" data-aos="fade-right" data-aos-duration="1000">
           <h3 class="fw-bold mb-4">Anamnese digital com assinatura eletrônica</h3>
-          <p class="mb-4">Elimine papéis e garanta segurança jurídica com nossa ficha de anamnese digital. Envie facilmente para seus clientes preencherem antes da sessão.</p>
+          <p class="mb-4">Elimine papéis e garanta segurança jurídica com nossa ficha de anamnese digital. Envie
+            facilmente para seus clientes preencherem antes da sessão.</p>
           <ul class="list-unstyled">
-            <li class="mb-3"><i class="fas fa-check text-primary me-2"></i> Formulário personalizado de acordo com seu estúdio</li>
-            <li class="mb-3"><i class="fas fa-check text-primary me-2"></i> Assinatura eletrônica com validade jurídica</li>
+            <li class="mb-3"><i class="fas fa-check text-primary me-2"></i> Formulário personalizado de acordo com seu
+              estúdio</li>
+            <li class="mb-3"><i class="fas fa-check text-primary me-2"></i> Assinatura eletrônica com validade jurídica
+            </li>
             <li class="mb-3"><i class="fas fa-check text-primary me-2"></i> Envio direto para WhatsApp do cliente</li>
-            <li class="mb-3"><i class="fas fa-check text-primary me-2"></i> Armazenamento seguro e vinculado ao cadastro</li>
+            <li class="mb-3"><i class="fas fa-check text-primary me-2"></i> Armazenamento seguro e vinculado ao cadastro
+            </li>
           </ul>
         </div>
         <div class="col-lg-6" data-aos="fade-left" data-aos-duration="1000" data-aos-delay="200">
@@ -1071,12 +1113,16 @@
       <div class="row align-items-center mb-5 flex-row-reverse">
         <div class="col-lg-6" data-aos="fade-left" data-aos-duration="1000">
           <h3 class="fw-bold mb-4">Controle financeiro completo</h3>
-          <p class="mb-4">Tenha uma visão clara das finanças do seu estúdio com relatórios detalhados, cálculo de comissões, controle de despesas e análise de performance.</p>
+          <p class="mb-4">Tenha uma visão clara das finanças do seu estúdio com relatórios detalhados, cálculo de
+            comissões, controle de despesas e análise de performance.</p>
           <ul class="list-unstyled">
             <li class="mb-3"><i class="fas fa-check text-primary me-2"></i> Controle de caixa diário detalhado</li>
-            <li class="mb-3"><i class="fas fa-check text-primary me-2"></i> Cálculo automático de comissões para artistas</li>
-            <li class="mb-3"><i class="fas fa-check text-primary me-2"></i> Gestão de despesas e custos operacionais</li>
-            <li class="mb-3"><i class="fas fa-check text-primary me-2"></i> Emissão de nota fiscal de serviços (NFS-e)</li>
+            <li class="mb-3"><i class="fas fa-check text-primary me-2"></i> Cálculo automático de comissões para
+              artistas</li>
+            <li class="mb-3"><i class="fas fa-check text-primary me-2"></i> Gestão de despesas e custos operacionais
+            </li>
+            <li class="mb-3"><i class="fas fa-check text-primary me-2"></i> Emissão de nota fiscal de serviços (NFS-e)
+            </li>
             <li class="mb-3"><i class="fas fa-check text-primary me-2"></i> Relatórios e gráficos de desempenho</li>
           </ul>
         </div>
@@ -1091,12 +1137,15 @@
       <div class="row align-items-center mb-5">
         <div class="col-lg-6" data-aos="fade-right" data-aos-duration="1000">
           <h3 class="fw-bold mb-4">Gestão de estoque especializada para tatuagem</h3>
-          <p class="mb-4">Controle com precisão todos os materiais do seu estúdio, desde tintas até agulhas, evitando perdas e otimizando compras.</p>
+          <p class="mb-4">Controle com precisão todos os materiais do seu estúdio, desde tintas até agulhas, evitando
+            perdas e otimizando compras.</p>
           <ul class="list-unstyled">
-            <li class="mb-3"><i class="fas fa-check text-primary me-2"></i> Cadastro detalhado de produtos específicos para tatuagem</li>
+            <li class="mb-3"><i class="fas fa-check text-primary me-2"></i> Cadastro detalhado de produtos específicos
+              para tatuagem</li>
             <li class="mb-3"><i class="fas fa-check text-primary me-2"></i> Alerta de produtos com estoque baixo</li>
             <li class="mb-3"><i class="fas fa-check text-primary me-2"></i> Reserva de materiais para cada sessão</li>
-            <li class="mb-3"><i class="fas fa-check text-primary me-2"></i> Histórico de utilização por cliente e profissional</li>
+            <li class="mb-3"><i class="fas fa-check text-primary me-2"></i> Histórico de utilização por cliente e
+              profissional</li>
           </ul>
         </div>
         <div class="col-lg-6" data-aos="fade-left" data-aos-duration="1000" data-aos-delay="200">
@@ -1110,12 +1159,16 @@
       <div class="row align-items-center mb-5 flex-row-reverse">
         <div class="col-lg-6" data-aos="fade-left" data-aos-duration="1000">
           <h3 class="fw-bold mb-4">CRM completo para fidelizar seus clientes</h3>
-          <p class="mb-4">Construa relacionamentos duradouros com seus clientes através de acompanhamento personalizado, desde o primeiro contato até o pós-atendimento.</p>
+          <p class="mb-4">Construa relacionamentos duradouros com seus clientes através de acompanhamento personalizado,
+            desde o primeiro contato até o pós-atendimento.</p>
           <ul class="list-unstyled">
-            <li class="mb-3"><i class="fas fa-check text-primary me-2"></i> Acompanhamento de cicatrização automatizado</li>
-            <li class="mb-3"><i class="fas fa-check text-primary me-2"></i> Notificações de aniversário dos clientes</li>
+            <li class="mb-3"><i class="fas fa-check text-primary me-2"></i> Acompanhamento de cicatrização automatizado
+            </li>
+            <li class="mb-3"><i class="fas fa-check text-primary me-2"></i> Notificações de aniversário dos clientes
+            </li>
             <li class="mb-3"><i class="fas fa-check text-primary me-2"></i> Pesquisa de satisfação após cada sessão</li>
-            <li class="mb-3"><i class="fas fa-check text-primary me-2"></i> Sistema de indicação e benefícios para clientes fiéis</li>
+            <li class="mb-3"><i class="fas fa-check text-primary me-2"></i> Sistema de indicação e benefícios para
+              clientes fiéis</li>
             <li class="mb-3"><i class="fas fa-check text-primary me-2"></i> Automação de mensagens via WhatsApp</li>
           </ul>
         </div>
@@ -1127,17 +1180,23 @@
       </div>
 
 
-       <!-- Feature 7: Cicatrização dos clientes -->
-       <div class="row align-items-center mb-5">
+      <!-- Feature 7: Cicatrização dos clientes -->
+      <div class="row align-items-center mb-5">
         <div class="col-lg-6" data-aos="fade-right" data-aos-duration="1000">
           <h3 class="fw-bold mb-4">Acompanhamento de cicatrização dos clientes</h3>
-          <p class="mb-4">Monitore de forma eficiente o processo de cicatrização das tatuagens, garantindo resultados perfeitos e aumentando a satisfação dos seus clientes.</p>
+          <p class="mb-4">Monitore de forma eficiente o processo de cicatrização das tatuagens, garantindo resultados
+            perfeitos e aumentando a satisfação dos seus clientes.</p>
           <ul class="list-unstyled">
-            <li class="mb-3"><i class="fas fa-check text-primary me-2"></i> Acompanhamento visual do progresso de cicatrização</li>
-            <li class="mb-3"><i class="fas fa-check text-primary me-2"></i> Monitoramento em períodos estratégicos: 5, 15, 30 e 60 dias</li>
-            <li class="mb-3"><i class="fas fa-check text-primary me-2"></i> Integração automática com WhatsApp para comunicação direta</li>
-            <li class="mb-3"><i class="fas fa-check text-primary me-2"></i> Feedback do cliente sobre o processo de cicatrização</li>
-            <li class="mb-3"><i class="fas fa-check text-primary me-2"></i> Histórico completo do progresso de cada cliente</li>
+            <li class="mb-3"><i class="fas fa-check text-primary me-2"></i> Acompanhamento visual do progresso de
+              cicatrização</li>
+            <li class="mb-3"><i class="fas fa-check text-primary me-2"></i> Monitoramento em períodos estratégicos: 5,
+              15, 30 e 60 dias</li>
+            <li class="mb-3"><i class="fas fa-check text-primary me-2"></i> Integração automática com WhatsApp para
+              comunicação direta</li>
+            <li class="mb-3"><i class="fas fa-check text-primary me-2"></i> Feedback do cliente sobre o processo de
+              cicatrização</li>
+            <li class="mb-3"><i class="fas fa-check text-primary me-2"></i> Histórico completo do progresso de cada
+              cliente</li>
           </ul>
         </div>
         <div class="col-lg-6" data-aos="fade-left" data-aos-duration="1000" data-aos-delay="200">
@@ -1151,14 +1210,21 @@
       <div class="row align-items-center mb-5 flex-row-reverse">
         <div class="col-lg-6" data-aos="fade-left" data-aos-duration="1000">
           <h3 class="fw-bold mb-4">API WhatsApp grátis para assinantes</h3>
-          <p class="mb-4">Use nossa API WhatsApp gratuita integrada ao GestãoInk. Envie mensagens em massa, crie campanhas de marketing e automatize sua comunicação com clientes de forma totalmente gratuita através da apizap.space.</p>
+          <p class="mb-4">Use nossa API WhatsApp gratuita integrada ao GestãoInk. Envie mensagens em massa, crie
+            campanhas de marketing e automatize sua comunicação com clientes de forma totalmente gratuita através da
+            apizap.space.</p>
           <ul class="list-unstyled">
-            <li class="mb-3"><i class="fas fa-check text-primary me-2"></i> Envio de mensagens em massa para seus contatos</li>
-            <li class="mb-3"><i class="fas fa-check text-primary me-2"></i> Segmentação de clientes por critérios específicos</li>
-            <li class="mb-3"><i class="fas fa-check text-primary me-2"></i> Automações de marketing e relacionamento</li>
+            <li class="mb-3"><i class="fas fa-check text-primary me-2"></i> Envio de mensagens em massa para seus
+              contatos</li>
+            <li class="mb-3"><i class="fas fa-check text-primary me-2"></i> Segmentação de clientes por critérios
+              específicos</li>
+            <li class="mb-3"><i class="fas fa-check text-primary me-2"></i> Automações de marketing e relacionamento
+            </li>
             <li class="mb-3"><i class="fas fa-check text-primary me-2"></i> Campanhas para orçamentos perdidos</li>
-            <li class="mb-3"><i class="fas fa-check text-primary me-2"></i> Mensagens direcionadas por serviços fechados</li>
-            <li class="mb-3"><i class="fas fa-check text-primary me-2"></i> Integração total com a base de clientes do GestãoInk</li>
+            <li class="mb-3"><i class="fas fa-check text-primary me-2"></i> Mensagens direcionadas por serviços fechados
+            </li>
+            <li class="mb-3"><i class="fas fa-check text-primary me-2"></i> Integração total com a base de clientes do
+              GestãoInk</li>
           </ul>
         </div>
         <div class="col-lg-6" data-aos="fade-right" data-aos-duration="1000" data-aos-delay="200">
@@ -1172,14 +1238,21 @@
       <div class="row align-items-center mb-5">
         <div class="col-lg-6" data-aos="fade-right" data-aos-duration="1000">
           <h3 class="fw-bold mb-4">Controle de comissões completo e transparente</h3>
-          <p class="mb-4">Gerencie com precisão todas as comissões dos profissionais, seja para pagamentos diretos ou repasses quando o tatuador recebe na própria máquina. Sistema integrado ao fluxo de caixa com comprovantes automáticos.</p>
+          <p class="mb-4">Gerencie com precisão todas as comissões dos profissionais, seja para pagamentos diretos ou
+            repasses quando o tatuador recebe na própria máquina. Sistema integrado ao fluxo de caixa com comprovantes
+            automáticos.</p>
           <ul class="list-unstyled">
-            <li class="mb-3"><i class="fas fa-check text-primary me-2"></i> Cálculo automático de comissões por profissional</li>
-            <li class="mb-3"><i class="fas fa-check text-primary me-2"></i> Controle de repasses quando tatuador recebe direto</li>
-            <li class="mb-3"><i class="fas fa-check text-primary me-2"></i> Geração automática de comprovantes e recibos</li>
-            <li class="mb-3"><i class="fas fa-check text-primary me-2"></i> Histórico anexado ao cadastro do profissional</li>
+            <li class="mb-3"><i class="fas fa-check text-primary me-2"></i> Cálculo automático de comissões por
+              profissional</li>
+            <li class="mb-3"><i class="fas fa-check text-primary me-2"></i> Controle de repasses quando tatuador recebe
+              direto</li>
+            <li class="mb-3"><i class="fas fa-check text-primary me-2"></i> Geração automática de comprovantes e recibos
+            </li>
+            <li class="mb-3"><i class="fas fa-check text-primary me-2"></i> Histórico anexado ao cadastro do
+              profissional</li>
             <li class="mb-3"><i class="fas fa-check text-primary me-2"></i> Integração total com fluxo de caixa</li>
-            <li class="mb-3"><i class="fas fa-check text-primary me-2"></i> Relatórios detalhados de comissões por período</li>
+            <li class="mb-3"><i class="fas fa-check text-primary me-2"></i> Relatórios detalhados de comissões por
+              período</li>
           </ul>
         </div>
         <div class="col-lg-6" data-aos="fade-left" data-aos-duration="1000" data-aos-delay="200">
@@ -1193,13 +1266,22 @@
       <div class="row align-items-center mb-5 flex-row-reverse">
         <div class="col-lg-6" data-aos="fade-left" data-aos-duration="1000">
           <h3 class="fw-bold mb-4">Multichat WhatsApp com IA</h3>
-          <p class="mb-4">Atenda vários WhatsApp de um único lugar, plugue a IA a qualquer momento para não perder nenhum orçamento e nenhum cliente. Cada mensagem no WhatsApp é etiquetada, vai o nome do atendente na mensagem, organizando o WhatsApp. Centralize o atendimento de vários números de WhatsApp com vários atendentes, tudo integrado ao GestãoInk. Cada conversa fica cadastrada automaticamente no sistema: cliente, orçamento e agendamento.</p>
+          <p class="mb-4">Atenda vários WhatsApp de um único lugar, plugue a IA a qualquer momento para não perder
+            nenhum orçamento e nenhum cliente. Cada mensagem no WhatsApp é etiquetada, vai o nome do atendente na
+            mensagem, organizando o WhatsApp. Centralize o atendimento de vários números de WhatsApp com vários
+            atendentes, tudo integrado ao GestãoInk. Cada conversa fica cadastrada automaticamente no sistema: cliente,
+            orçamento e agendamento.</p>
           <ul class="list-unstyled">
-            <li class="mb-3"><i class="fas fa-check text-primary me-2"></i> Atendimento de múltiplos números de WhatsApp em um só painel</li>
-            <li class="mb-3"><i class="fas fa-check text-primary me-2"></i> IA que responde, agenda e cadastra orçamentos automaticamente</li>
-            <li class="mb-3"><i class="fas fa-check text-primary me-2"></i> Etiquetas e nome do atendente em cada mensagem</li>
-            <li class="mb-3"><i class="fas fa-check text-primary me-2"></i> Centralização de atendentes e organização do fluxo</li>
-            <li class="mb-3"><i class="fas fa-check text-primary me-2"></i> Integração total com o GestãoInk: cada conversa gera cadastro, orçamento e agendamento</li>
+            <li class="mb-3"><i class="fas fa-check text-primary me-2"></i> Atendimento de múltiplos números de WhatsApp
+              em um só painel</li>
+            <li class="mb-3"><i class="fas fa-check text-primary me-2"></i> IA que responde, agenda e cadastra
+              orçamentos automaticamente</li>
+            <li class="mb-3"><i class="fas fa-check text-primary me-2"></i> Etiquetas e nome do atendente em cada
+              mensagem</li>
+            <li class="mb-3"><i class="fas fa-check text-primary me-2"></i> Centralização de atendentes e organização do
+              fluxo</li>
+            <li class="mb-3"><i class="fas fa-check text-primary me-2"></i> Integração total com o GestãoInk: cada
+              conversa gera cadastro, orçamento e agendamento</li>
           </ul>
         </div>
         <div class="col-lg-6" data-aos="fade-right" data-aos-duration="1000" data-aos-delay="200">
@@ -1228,7 +1310,8 @@
               <i class="fas fa-bolt"></i>
             </div>
             <h4 class="fw-bold mb-3">Mais produtividade</h4>
-            <p>Reduza em até 70% o tempo gasto com tarefas administrativas e foque no que realmente importa: criar arte.</p>
+            <p>Reduza em até 70% o tempo gasto com tarefas administrativas e foque no que realmente importa: criar arte.
+            </p>
           </div>
         </div>
 
@@ -1239,7 +1322,8 @@
               <i class="fas fa-chart-line"></i>
             </div>
             <h4 class="fw-bold mb-3">Aumento de vendas</h4>
-            <p>Aumente em até 30% sua taxa de conversão de orçamentos com respostas rápidas e acompanhamento eficiente.</p>
+            <p>Aumente em até 30% sua taxa de conversão de orçamentos com respostas rápidas e acompanhamento eficiente.
+            </p>
           </div>
         </div>
 
@@ -1250,7 +1334,8 @@
               <i class="fas fa-users"></i>
             </div>
             <h4 class="fw-bold mb-3">Fidelização de clientes</h4>
-            <p>Construa relacionamentos duradouros com seus clientes através de acompanhamento personalizado e automático.</p>
+            <p>Construa relacionamentos duradouros com seus clientes através de acompanhamento personalizado e
+              automático.</p>
           </div>
         </div>
 
@@ -1370,7 +1455,7 @@
             </div>
           </div>
         </div>
-        
+
         <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="700">
           <div class="card h-100">
             <div class="feature-img-container">
@@ -1378,11 +1463,12 @@
             </div>
             <div class="card-body">
               <h5 class="fw-bold mb-3">Portfólio dos Artistas</h5>
-              <p>Crie portfólios online profissionais para seus artistas, permitindo que clientes conheçam seus trabalhos.</p>
+              <p>Crie portfólios online profissionais para seus artistas, permitindo que clientes conheçam seus
+                trabalhos.</p>
             </div>
           </div>
         </div>
-        
+
         <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="800">
           <div class="card h-100">
             <div class="feature-img-container">
@@ -1394,7 +1480,7 @@
             </div>
           </div>
         </div>
-        
+
         <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="900">
           <div class="card h-100">
             <div class="feature-img-container">
@@ -1402,7 +1488,8 @@
             </div>
             <div class="card-body">
               <h5 class="fw-bold mb-3">Conciliação Bancária</h5>
-              <p>Mantenha o controle financeiro com precisão através da conciliação automática das suas movimentações bancárias.</p>
+              <p>Mantenha o controle financeiro com precisão através da conciliação automática das suas movimentações
+                bancárias.</p>
             </div>
           </div>
         </div>
@@ -1421,22 +1508,26 @@
       <div class="row g-4 justify-content-center">
         <div class="col-6 col-md-3" data-aos="fade-up" data-aos-delay="100">
           <div class="bg-dark p-4 rounded-3 text-center">
-            <img src="images/146473349_1866819483471023_7445271751955426073_n.png" alt="Studio Case 1" class="img-fluid mb-3" style="max-height: 100px;">
+            <img src="images/146473349_1866819483471023_7445271751955426073_n.png" alt="Studio Case 1"
+              class="img-fluid mb-3" style="max-height: 100px;">
           </div>
         </div>
         <div class="col-6 col-md-3" data-aos="fade-up" data-aos-delay="200">
           <div class="bg-dark p-4 rounded-3 text-center">
-            <img src="images/Screenshot_1-removebg-preview.png" alt="Studio Case 2" class="img-fluid mb-3" style="max-height: 100px;">
+            <img src="images/Screenshot_1-removebg-preview.png" alt="Studio Case 2" class="img-fluid mb-3"
+              style="max-height: 100px;">
           </div>
         </div>
         <div class="col-6 col-md-3" data-aos="fade-up" data-aos-delay="300">
           <div class="bg-dark p-4 rounded-3 text-center">
-            <img src="images/Screenshot_2-removebg-preview.png" alt="Studio Case 3" class="img-fluid mb-3" style="max-height: 100px;">
+            <img src="images/Screenshot_2-removebg-preview.png" alt="Studio Case 3" class="img-fluid mb-3"
+              style="max-height: 100px;">
           </div>
         </div>
         <div class="col-6 col-md-3" data-aos="fade-up" data-aos-delay="400">
           <div class="bg-dark p-4 rounded-3 text-center">
-            <img src="images/30710875_1655436247885760_1929487387818044722_n.png" alt="Studio Case 4" class="img-fluid mb-3" style="max-height: 100px;">
+            <img src="images/30710875_1655436247885760_1929487387818044722_n.png" alt="Studio Case 4"
+              class="img-fluid mb-3" style="max-height: 100px;">
           </div>
         </div>
       </div>
@@ -1447,7 +1538,8 @@
           <div class="swiper-wrapper">
             <div class="swiper-slide">
               <div class="testimonial-card">
-                <p class="mb-4">"O GestãoInk revolucionou nosso estúdio. A organização dos orçamentos e agendamentos melhorou nossa taxa de conversão em mais de 40%. Não consigo imaginar voltar a trabalhar sem ele."</p>
+                <p class="mb-4">"O GestãoInk revolucionou nosso estúdio. A organização dos orçamentos e agendamentos
+                  melhorou nossa taxa de conversão em mais de 40%. Não consigo imaginar voltar a trabalhar sem ele."</p>
                 <div class="d-flex align-items-center">
                   <div class="rounded-circle overflow-hidden me-3" style="width: 50px; height: 50px;">
                     <img src="https://randomuser.me/api/portraits/men/41.jpg" alt="Avatar" class="img-fluid">
@@ -1461,7 +1553,8 @@
             </div>
             <div class="swiper-slide">
               <div class="testimonial-card">
-                <p class="mb-4">"A automação do acompanhamento de cicatrização e os lembretes via WhatsApp impressionam nossos clientes. Eles sempre comentam sobre como somos organizados e atenciosos."</p>
+                <p class="mb-4">"A automação do acompanhamento de cicatrização e os lembretes via WhatsApp impressionam
+                  nossos clientes. Eles sempre comentam sobre como somos organizados e atenciosos."</p>
                 <div class="d-flex align-items-center">
                   <div class="rounded-circle overflow-hidden me-3" style="width: 50px; height: 50px;">
                     <img src="https://randomuser.me/api/portraits/women/63.jpg" alt="Avatar" class="img-fluid">
@@ -1475,7 +1568,8 @@
             </div>
             <div class="swiper-slide">
               <div class="testimonial-card">
-                <p class="mb-4">"O controle financeiro do GestãoInk nos ajudou a identificar onde estávamos perdendo dinheiro e a otimizar nossos investimentos. Em 6 meses, aumentamos nosso lucro em 35%."</p>
+                <p class="mb-4">"O controle financeiro do GestãoInk nos ajudou a identificar onde estávamos perdendo
+                  dinheiro e a otimizar nossos investimentos. Em 6 meses, aumentamos nosso lucro em 35%."</p>
                 <div class="d-flex align-items-center">
                   <div class="rounded-circle overflow-hidden me-3" style="width: 50px; height: 50px;">
                     <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Avatar" class="img-fluid">
@@ -1505,7 +1599,8 @@
       <div class="row justify-content-center">
         <div class="col-lg-10" data-aos="zoom-in">
           <div class="ratio ratio-16x9 rounded-3 overflow-hidden shadow-lg">
-            <iframe src="https://www.youtube.com/embed/1OsBC_yhCMo?autoplay=0&mute=0&controls=1" title="GestãoInk Demo" allowfullscreen></iframe>
+            <iframe src="https://www.youtube.com/embed/1OsBC_yhCMo?autoplay=0&mute=0&controls=1" title="GestãoInk Demo"
+              allowfullscreen></iframe>
           </div>
         </div>
       </div>
@@ -1518,17 +1613,20 @@
       <div class="text-center mb-5" data-aos="fade-up">
         <h2 class="fw-bold mb-3">Escolha o plano ideal para seu estúdio</h2>
         <p class="lead">Invista no crescimento do seu negócio com uma solução completa</p>
-        
+
         <!-- Promotion Banner -->
-        <div class="alert alert-primary mt-3 mb-4 d-inline-block px-4 py-3" style="background-color: rgba(255, 114, 94, 0.15); border: 1px solid var(--primary); border-radius: 8px; color: white;">
-          <i class="fas fa-tag me-2"></i> <strong>PROMOÇÃO ESPECIAL:</strong> 30% de desconto em todos os planos! Use o cupom: <span class="fw-bold">GINK2530</span>
+        <div class="alert alert-primary mt-3 mb-4 d-inline-block px-4 py-3"
+          style="background-color: rgba(255, 114, 94, 0.15); border: 1px solid var(--primary); border-radius: 8px; color: white;">
+          <i class="fas fa-tag me-2"></i> <strong>PROMOÇÃO ESPECIAL:</strong> 30% de desconto em todos os planos! Use o
+          cupom: <span class="fw-bold">GINK2530</span>
         </div>
-        
+
         <!-- Pricing Toggle -->
         <div class="d-flex justify-content-center align-items-center mt-4">
           <span class="me-3 fw-bold">Mensal</span>
           <div class="form-check form-switch d-inline-block">
-            <input class="form-check-input" type="checkbox" id="pricingToggle" checked style="width: 60px; height: 30px;">
+            <input class="form-check-input" type="checkbox" id="pricingToggle" checked
+              style="width: 60px; height: 30px;">
             <label class="form-check-label" for="pricingToggle"></label>
           </div>
           <span class="ms-3 fw-bold">Anual <span class="badge bg-primary">Economize 60%</span></span>
@@ -1539,7 +1637,8 @@
         <!-- Pricing Plan 1 -->
         <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="100">
           <div class="pricing-card">
-            <span class="badge bg-danger position-absolute" style="top: -10px; left: 20px; transform: rotate(-15deg);">30% OFF</span>
+            <span class="badge bg-danger position-absolute"
+              style="top: -10px; left: 20px; transform: rotate(-15deg);">30% OFF</span>
             <h4 class="fw-bold">AUTÔNOMO</h4>
             <div class="price monthly-price" style="display: none;">
               <span style="text-decoration: line-through; color: #999; font-size: 28px;">R$149</span>
@@ -1557,8 +1656,10 @@
               <li class="mb-3"><i class="fas fa-check text-primary me-2"></i> Suporte por e-mail</li>
               <li class="mb-3"><i class="fas fa-check text-primary me-2"></i> Acesso em múltiplos dispositivos</li>
             </ul>
-            <a href="https://pay.kiwify.com.br/ZTDJoCg?coupon=GINK2530" class="btn btn-outline w-100 monthly-btn" style="display: none;">Assinar Plano Mensal</a>
-            <a href="https://pay.kiwify.com.br/lYGV9TK?coupon=BLACKINK60" class="btn btn-outline w-100 annual-btn">Assinar Plano Anual</a>
+            <a href="https://pay.kiwify.com.br/ZTDJoCg?coupon=GINK2530" class="btn btn-outline w-100 monthly-btn"
+              style="display: none;">Assinar Plano Mensal</a>
+            <a href="https://pay.kiwify.com.br/lYGV9TK?coupon=BLACKINK60"
+              class="btn btn-outline w-100 annual-btn">Assinar Plano Anual</a>
           </div>
         </div>
 
@@ -1566,7 +1667,8 @@
         <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="200">
           <div class="pricing-card featured">
             <span class="badge bg-primary position-absolute" style="top: -10px; right: 20px;">MAIS POPULAR</span>
-            <span class="badge bg-danger position-absolute" style="top: -10px; left: 20px; transform: rotate(-15deg);">30% OFF</span>
+            <span class="badge bg-danger position-absolute"
+              style="top: -10px; left: 20px; transform: rotate(-15deg);">30% OFF</span>
             <h4 class="fw-bold">TATTOO STUDIO BASIC</h4>
             <div class="price monthly-price" style="display: none;">
               <span style="text-decoration: line-through; color: #999; font-size: 28px;">R$199</span>
@@ -1584,15 +1686,18 @@
               <li class="mb-3"><i class="fas fa-check text-primary me-2"></i> Suporte por e-mail prioritário</li>
               <li class="mb-3"><i class="fas fa-check text-primary me-2"></i> Acesso em múltiplos dispositivos</li>
             </ul>
-            <a href="https://pay.kiwify.com.br/BE6pceM?coupon=GINK2530" class="btn btn-primary w-100 monthly-btn" style="display: none;">Assinar Plano Mensal</a>
-            <a href="https://pay.kiwify.com.br/1NfkNVB?coupon=BLACKINK60" class="btn btn-primary w-100 annual-btn">Assinar Plano Anual</a>
+            <a href="https://pay.kiwify.com.br/BE6pceM?coupon=GINK2530" class="btn btn-primary w-100 monthly-btn"
+              style="display: none;">Assinar Plano Mensal</a>
+            <a href="https://pay.kiwify.com.br/1NfkNVB?coupon=BLACKINK60"
+              class="btn btn-primary w-100 annual-btn">Assinar Plano Anual</a>
           </div>
         </div>
 
         <!-- Pricing Plan 3 -->
         <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="300">
           <div class="pricing-card">
-            <span class="badge bg-danger position-absolute" style="top: -10px; left: 20px; transform: rotate(-15deg);">30% OFF</span>
+            <span class="badge bg-danger position-absolute"
+              style="top: -10px; left: 20px; transform: rotate(-15deg);">30% OFF</span>
             <h4 class="fw-bold">TATTOO STUDIO PRO</h4>
             <div class="price monthly-price" style="display: none;">
               <span style="text-decoration: line-through; color: #999; font-size: 28px;">R$299</span>
@@ -1611,8 +1716,10 @@
               <li class="mb-3"><i class="fas fa-check text-primary me-2"></i> Acesso em múltiplos dispositivos</li>
               <li class="mb-3"><i class="fas fa-check text-primary me-2"></i> Treinamento personalizado</li>
             </ul>
-            <a href="https://pay.kiwify.com.br/TiuLiek?coupon=GINK2530" class="btn btn-outline w-100 monthly-btn" style="display: none;">Assinar Plano Mensal</a>
-            <a href="https://pay.kiwify.com.br/zYam7iC?coupon=BLACKINK60" class="btn btn-outline w-100 annual-btn">Assinar Plano Anual</a>
+            <a href="https://pay.kiwify.com.br/TiuLiek?coupon=GINK2530" class="btn btn-outline w-100 monthly-btn"
+              style="display: none;">Assinar Plano Mensal</a>
+            <a href="https://pay.kiwify.com.br/zYam7iC?coupon=BLACKINK60"
+              class="btn btn-outline w-100 annual-btn">Assinar Plano Anual</a>
           </div>
         </div>
 
@@ -1620,7 +1727,8 @@
         <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="400">
           <div class="pricing-card featured">
             <span class="badge bg-primary position-absolute" style="top: -10px; right: 20px;">VITALÍCIO</span>
-            <span class="badge bg-danger position-absolute" style="top: -10px; left: 20px; transform: rotate(-15deg);">51% OFF</span>
+            <span class="badge bg-danger position-absolute"
+              style="top: -10px; left: 20px; transform: rotate(-15deg);">51% OFF</span>
             <h4 class="fw-bold">PLANO VITALÍCIO</h4>
             <div class="price">
               <span style="text-decoration: line-through; color: #999; font-size: 28px;">R$5.000</span>
@@ -1643,7 +1751,8 @@
 
       <div class="text-center mt-5" data-aos="fade-up">
         <p class="mb-4">Ainda tem dúvidas sobre qual plano escolher?</p>
-        <a href="https://api.whatsapp.com/send?phone=5547989235660&text=Ol%C3%A1%2C%20gostaria%20de%20saber%20mais%20sobre%20o%20Gest%C3%A3oInk" class="btn btn-outline-light">
+        <a href="https://api.whatsapp.com/send?phone=5547989235660&text=Ol%C3%A1%2C%20gostaria%20de%20saber%20mais%20sobre%20o%20Gest%C3%A3oInk"
+          class="btn btn-outline-light">
           <i class="fab fa-whatsapp me-2"></i> Fale com um consultor
         </a>
       </div>
@@ -1657,10 +1766,13 @@
         <div class="col-lg-8" data-aos="fade-up">
           <h2 class="fw-bold mb-4">Pronto para transformar seu estúdio de tatuagem?</h2>
           <p class="lead mb-3">Junte-se a mais de 1000 estúdios que estão crescendo com o GestãoInk.</p>
-          <div class="alert alert-primary d-inline-block px-4 py-3 mb-4" style="background-color: rgba(255, 114, 94, 0.15); border: 1px solid var(--primary); border-radius: 8px; color: white;">
-            <i class="fas fa-tag me-2"></i> <strong>PROMOÇÃO ESPECIAL:</strong> 30% de desconto em todos os planos! Use o cupom: <span class="fw-bold">GINK2530</span>
+          <div class="alert alert-primary d-inline-block px-4 py-3 mb-4"
+            style="background-color: rgba(255, 114, 94, 0.15); border: 1px solid var(--primary); border-radius: 8px; color: white;">
+            <i class="fas fa-tag me-2"></i> <strong>PROMOÇÃO ESPECIAL:</strong> 30% de desconto em todos os planos! Use
+            o cupom: <span class="fw-bold">GINK2530</span>
           </div>
-          <a href="https://gestaoink.tech/dashboard/logingestaoink" class="btn btn-primary btn-lg">Comece seu teste grátis de 5 dias</a>
+          <a href="https://gestaoink.tech/dashboard/logingestaoink" class="btn btn-primary btn-lg">Comece seu teste
+            grátis de 5 dias</a>
           <p class="mt-3 text-muted">Não é necessário cartão de crédito</p>
         </div>
       </div>
@@ -1678,7 +1790,8 @@
             <a href="https://www.facebook.com/gestaoink" target="_blank"><i class="fab fa-facebook-f"></i></a>
             <a href="https://www.instagram.com/gestaoink/" target="_blank"><i class="fab fa-instagram"></i></a>
             <a href="https://twitter.com/gestaoink" target="_blank"><i class="fab fa-twitter"></i></a>
-            <a href="https://www.linkedin.com/company/10319419/admin/" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+            <a href="https://www.linkedin.com/company/10319419/admin/" target="_blank"><i
+                class="fab fa-linkedin-in"></i></a>
             <a href="https://www.youtube.com/gestaoink" target="_blank"><i class="fab fa-youtube"></i></a>
           </div>
         </div>
@@ -1686,7 +1799,8 @@
           <h5 class="fw-bold mb-4">Links Rápidos</h5>
           <ul class="list-unstyled">
             <li class="mb-2"><a href="#home" class="text-decoration-none text-secondary">Início</a></li>
-            <li class="mb-2"><a href="#funcionalidades" class="text-decoration-none text-secondary">Funcionalidades</a></li>
+            <li class="mb-2"><a href="#funcionalidades" class="text-decoration-none text-secondary">Funcionalidades</a>
+            </li>
             <li class="mb-2"><a href="#beneficios" class="text-decoration-none text-secondary">Benefícios</a></li>
             <li class="mb-2"><a href="#casos" class="text-decoration-none text-secondary">Cases</a></li>
             <li class="mb-2"><a href="#planos" class="text-decoration-none text-secondary">Planos</a></li>
@@ -1695,10 +1809,13 @@
         <div class="col-md-4 col-lg-2">
           <h5 class="fw-bold mb-4">Recursos</h5>
           <ul class="list-unstyled">
-            <li class="mb-2"><a href="https://blog.gestaoink.site" class="text-decoration-none text-secondary">Blog</a></li>
+            <li class="mb-2"><a href="https://blog.gestaoink.site" class="text-decoration-none text-secondary">Blog</a>
+            </li>
             <li class="mb-2"><a href="#" class="text-decoration-none text-secondary">Central de Ajuda</a></li>
             <li class="mb-2"><a href="#" class="text-decoration-none text-secondary">Tutoriais</a></li>
-            <li class="mb-2"><a href="https://gestaoink.site/Política de Privacidade para a Tela de Permissão OAuth do Google Agenda API.pdf" target="_blank" class="text-decoration-none text-secondary">Política de Privacidade</a></li>
+            <li class="mb-2"><a
+                href="https://gestaoink.site/Política de Privacidade para a Tela de Permissão OAuth do Google Agenda API.pdf"
+                target="_blank" class="text-decoration-none text-secondary">Política de Privacidade</a></li>
             <li class="mb-2"><a href="#" class="text-decoration-none text-secondary">Termos de Uso</a></li>
           </ul>
         </div>
@@ -1709,7 +1826,7 @@
             <li class="mb-2"><i class="fas fa-phone-alt me-2 text-primary"></i> (47) 98923-5660</li>
             <li class="mb-2"><i class="fas fa-map-marker-alt me-2 text-primary"></i> Brasil</li>
           </ul>
-          
+
         </div>
       </div>
       <hr class="my-5" style="background-color: #333;">
@@ -1718,7 +1835,8 @@
           <p class="mb-0">© 2025 GestãoInk. Todos os direitos reservados.</p>
         </div>
         <div class="col-md-6 text-md-end">
-          <p class="mb-0">Desenvolvido por <a href="https://yggra.com.br" class="text-decoration-none text-primary">yggra.com.br</a></p>
+          <p class="mb-0">Desenvolvido por <a href="https://yggra.com.br"
+              class="text-decoration-none text-primary">yggra.com.br</a></p>
         </div>
       </div>
     </div>
@@ -1733,7 +1851,9 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/js/all.min.js" integrity="sha512-GWzVrcGlo0TxTRvz9ttioyYJ+Wwk9Ck0G81D+eO63BaqHaJ3YZX9wuqjwgfcV/MrB2PhaVX9DkYVhbFpStnqpQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/js/all.min.js"
+    integrity="sha512-GWzVrcGlo0TxTRvz9ttioyYJ+Wwk9Ck0G81D+eO63BaqHaJ3YZX9wuqjwgfcV/MrB2PhaVX9DkYVhbFpStnqpQ=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
   <script src="jquery.js"></script>
 
   <script>
@@ -1764,7 +1884,7 @@
     });
 
     // Sticky Navbar
-    window.addEventListener('scroll', function() {
+    window.addEventListener('scroll', function () {
       const navbar = document.querySelector('.navbar');
       if (window.scrollY > 50) {
         navbar.classList.add('scrolled');
@@ -1782,7 +1902,7 @@
     });
 
     // Back to top button click
-    document.querySelector('.back-to-top').addEventListener('click', function() {
+    document.querySelector('.back-to-top').addEventListener('click', function () {
       window.scrollTo({
         top: 0,
         behavior: 'smooth'
@@ -1826,7 +1946,7 @@
     // Inicializar com anual (checked)
     updatePricingDisplay(true);
 
-    pricingToggle.addEventListener('change', function() {
+    pricingToggle.addEventListener('change', function () {
       updatePricingDisplay(this.checked);
     });
 
@@ -1834,13 +1954,13 @@
     document.addEventListener('DOMContentLoaded', function () {
       // Get all links pointing to the login page
       const loginLinks = document.querySelectorAll('a[href*="gestaoink.tech/dashboard/logingestaoink"]');
-      
+
       // Function to handle click events
       function handleLinkClick(e) {
         // Get current UTM parameters
         const url = new URL(window.location.href);
         const params = url.searchParams;
-        
+
         // Extract only UTM parameters
         const utmParams = new URLSearchParams();
         for (const [key, value] of params.entries()) {
@@ -1848,30 +1968,30 @@
             utmParams.append(key, value);
           }
         }
-        
+
         if (utmParams.toString()) {
           // Get the original link destination
           const destination = new URL(this.href);
-          
+
           // Add UTM parameters to the destination
           for (const [key, value] of utmParams.entries()) {
             destination.searchParams.set(key, value);
           }
-          
+
           // Update the href attribute
           this.href = destination.toString();
         }
       }
-      
+
       // Add click event listeners to all login links
-      loginLinks.forEach(function(link) {
+      loginLinks.forEach(function (link) {
         link.addEventListener('click', handleLinkClick);
       });
-      
+
       // Trail System GestãoInk
       initializeTrailSystemInk();
     });
-    
+
     // Trail System Functions
     function initializeTrailSystemInk() {
       const commonCards = [
@@ -1911,7 +2031,7 @@
           requirements: ['Dados da operadora', 'Taxa de transação', 'Prazo de recebimento']
         }
       ];
-      
+
       const specificCards = {
         'orcamentos': [
           {
@@ -2122,39 +2242,39 @@
           }
         ]
       };
-      
+
       let currentTrail = 'orcamentos';
       const modal = document.getElementById('trailModalInk');
       const trailFlow = document.getElementById('trailFlowInk');
-      
+
       function renderTrail(trailKey) {
         trailFlow.innerHTML = '';
-        
+
         trailFlow.innerHTML += '<h3 class="trail-section-title">Cadastros Base (Iniciais)</h3>';
         renderCards(commonCards, trailFlow);
-        
+
         if (specificCards[trailKey] && specificCards[trailKey].length > 0) {
           trailFlow.innerHTML += '<h3 class="trail-section-title">Funcionalidades Específicas</h3>';
           renderCards(specificCards[trailKey], trailFlow);
         }
       }
-      
+
       function renderCards(cards, container) {
         const cardsPerRow = 3;
         const rows = Math.ceil(cards.length / cardsPerRow);
-        
+
         for (let i = 0; i < rows; i++) {
           const rowDiv = document.createElement('div');
           rowDiv.className = 'trail-row';
-          
+
           const startIdx = i * cardsPerRow;
           const endIdx = Math.min(startIdx + cardsPerRow, cards.length);
           const rowCards = cards.slice(startIdx, endIdx);
-          
+
           rowCards.forEach((card, idx) => {
             const cardEl = createCard(card);
             rowDiv.appendChild(cardEl);
-            
+
             if (idx < rowCards.length - 1) {
               const line = document.createElement('div');
               line.className = 'trail-connection-line';
@@ -2162,9 +2282,9 @@
               rowDiv.appendChild(line);
             }
           });
-          
+
           container.appendChild(rowDiv);
-          
+
           if (i < rows - 1) {
             const verticalLine = document.createElement('div');
             verticalLine.className = 'trail-connection-line vertical';
@@ -2172,26 +2292,26 @@
           }
         }
       }
-      
+
       function createCard(cardData) {
         const card = document.createElement('div');
         card.className = 'trail-card';
-        
+
         card.innerHTML = `
           <div class="trail-card-icon">${cardData.icon}</div>
           <div class="trail-card-title">${cardData.title}</div>
         `;
-        
+
         card.addEventListener('click', () => openModal(cardData));
-        
+
         return card;
       }
-      
+
       function openModal(cardData) {
         document.getElementById('trailModalIconInk').textContent = cardData.icon;
         document.getElementById('trailModalTitleInk').textContent = cardData.title;
         document.getElementById('trailModalDescriptionInk').textContent = cardData.description;
-        
+
         const reqDiv = document.getElementById('trailModalRequirementsInk');
         reqDiv.innerHTML = `
           <h3>Requisitos:</h3>
@@ -2199,10 +2319,10 @@
             ${cardData.requirements.map(req => `<li>${req}</li>`).join('')}
           </ul>
         `;
-        
+
         modal.classList.add('active');
       }
-      
+
       // Setup trail buttons
       const buttons = document.querySelectorAll('.trail-btn');
       buttons.forEach(btn => {
@@ -2213,28 +2333,29 @@
           renderTrail(currentTrail);
         });
       });
-      
+
       // Setup modal close
       const closeBtn = document.querySelector('.trail-modal-close');
       closeBtn.addEventListener('click', () => {
         modal.classList.remove('active');
       });
-      
+
       window.addEventListener('click', (e) => {
         if (e.target === modal) {
           modal.classList.remove('active');
         }
       });
-      
+
       document.addEventListener('keydown', (e) => {
         if (e.key === 'Escape' && modal.classList.contains('active')) {
           modal.classList.remove('active');
         }
       });
-      
+
       // Initialize with first trail
       renderTrail(currentTrail);
     }
   </script>
 </body>
+
 </html>
